@@ -1,0 +1,13 @@
+:root {
+  --max-width: 1000px;
+  --primary-color: #0070f3;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+}
