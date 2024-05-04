@@ -1,0 +1,93 @@
+.base {
+  display: flex;
+  max-width: 100%;
+  height: max-content;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.iconOnly {
+  padding: 6px;
+}
+
+/* Size specific styles */
+.xs {
+  padding: 8px;
+  height: 28px;
+}
+.sm {
+  padding: 12px;
+  height: 32px;
+}
+.md {
+  padding: 16px;
+  height: 36px;
+}
+.lg {
+  padding: 16px;
+  height: 48px;
+}
+.xl {
+  padding: 16px;
+  height: 56px;
+}
+
+/* Icon sizing */
+.xs svg {
+  width: 12px;
+  height: 12px;
+}
+.sm svg {
+  width: 14px;
+  height: 14px;
+}
+.md svg {
+  width: 16px;
+  height: 16px;
+}
+.lg svg {
+  width: 24px;
+  height: 24px;
+}
+.xl svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Color and Variant specific styles */
+.fill.primary {
+  color: var(--gray-0);
+  background-color: var(--primary-color);
+}
+.outline.primary {
+  color: var(--text-default);
+  border-color: var(--primary-color);
+}
+.fill.secondary {
+  color: var(--gray-0);
+  background-color: var(--secondary-color);
+}
+.outline.secondary {
+  color: var(--text-default);
+  border-color: var(--secondary-color);
+}
+
+.transparent {
+  color: var(--text-default) !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+
+.interactive {
+  transition: transform 0.2s;
+}
+
+.disabled {
+  cursor: not-allowed;
+  color: var(--disabled-color);
+  background: var(--disabled-bg);
+}
