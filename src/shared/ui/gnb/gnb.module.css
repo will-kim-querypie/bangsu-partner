@@ -1,0 +1,21 @@
+.container {
+  max-width: 1000px;
+  height: var(--gnb-height);
+  position: sticky;
+  top: 0;
+  display: flex;
+  z-index: var(--z-gnb);
+}
+
+/**
+ * desktop
+ */
+.desktop {
+  display: none;
+  height: 90px;
+}
+@media screen and (min-width: 1000px) {
+  .desktop {
+    display: flex;
+  }
+}

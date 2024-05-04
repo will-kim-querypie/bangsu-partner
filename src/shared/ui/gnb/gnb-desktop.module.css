@@ -1,0 +1,9 @@
+.container {
+  display: none;
+  height: 100%;
+}
+@media screen and (min-width: 1000px) {
+  .container {
+    display: flex;
+  }
+}

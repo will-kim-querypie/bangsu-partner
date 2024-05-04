@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import { XLg } from 'react-bootstrap-icons';
 import clsx from 'clsx';
@@ -9,7 +9,7 @@ type Direction = 'left' | 'right' | 'top' | 'bottom';
 
 type DrawerProps = {
   id: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   open: boolean;
   onClose?: () => void;
   size?: number | string;
@@ -25,7 +25,7 @@ export default function Drawer({
   open,
   onClose = () => {},
   size = 300,
-  direction = 'left',
+  direction = 'right',
   lockBackgroundScroll = false,
   overlayClassName,
   className,
