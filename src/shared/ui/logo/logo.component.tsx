@@ -1,14 +1,9 @@
-import Image from 'next/image';
-import styles from './logo.module.css';
+import { ResponsiveImage } from '../responsive-image';
 
 type LogoProps = {
   width: number;
 };
 
 export default function Logo({ width }: LogoProps) {
-  return (
-    <div className={styles.container} style={{ width }}>
-      <Image src="/logo.png" alt="logo" className={styles.image} quality={100} fill priority />
-    </div>
-  );
+  return <ResponsiveImage src="/logo.png" alt="logo" width={width} aspectRatio="254 / 43" quality={100} priority />;
 }
