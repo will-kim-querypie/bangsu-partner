@@ -1,6 +1,45 @@
 :root {
-  --max-width: 1000px;
-  --primary-color: #0070f3;
+  --brand-50: #e0f3ff;
+  --brand-100: #b7d8fb;
+  --brand-200: #8cbef2;
+  --brand-300: #60a4ec;
+  --brand-400: #358ae6;
+  --brand-500: #1d71cc;
+  --brand-600: #13589f;
+  --brand-700: #0a3f73;
+  --brand-800: #002647;
+  --brand-900: #000e1d;
+
+  --gray-0: #ffffff;
+  --gray-50: #edf3f8;
+  --gray-100: #d5d8dc;
+  --gray-200: #bbbec2;
+  --gray-300: #a0a5aa;
+  --gray-400: #858b92;
+  --gray-500: #6b7178;
+  --gray-600: #53585f;
+  --gray-700: #3b3f44;
+  --gray-800: #23262a;
+  --gray-900: #070e13;
+}
+:root {
+  --primary-color: var(--brand-500);
+  --secondary-color: var(--brand-700);
+  --bg-color: var(--gray-0);
+  --text-default: var(--gray-700);
+  --text-static: var(--gray-900);
+  --disabled-color: var(--gray-400);
+  --disabled-bg: var(--gray-100);
+
+  --gnb-height: 50px;
+
+  --z-gnb: 100;
+  --z-drawer: 1000;
+}
+@media screen and (min-width: 1000px) {
+  :root {
+    --gnb-height: 90px;
+  }
 }
 
 html,
@@ -10,4 +49,12 @@ body {
 }
 
 body {
+  height: 1000vh;
+  font-family: 'Noto Sans', 'Nanum Gothic', 'Malgun Gothic', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-default);
+  overflow: hidden;
+  text-rendering: optimizeLegibility;
+  scroll-padding-top: var(--gnb-height);
+  text-size-adjust: 100%;
 }

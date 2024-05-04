@@ -1,11 +1,9 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ReactNode } from 'react';
-
 import './reset.css';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+import { Metadata } from 'next';
+import { ReactNode } from 'react';
+import { GNB } from '@/shared/ui/gnb';
 
 export const metadata: Metadata = {
   title: '25년 경력의 방수 시공 전문업체, 엘코엘시즈',
@@ -17,7 +15,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <GNB />
+        {children}
+      </body>
     </html>
   );
 }
