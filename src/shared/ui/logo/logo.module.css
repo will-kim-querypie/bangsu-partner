@@ -1,0 +1,10 @@
+.container {
+  position: relative;
+  aspect-ratio: 254 / 43;
+}
+
+.image {
+  position: relative !important;
+  height: unset !important;
+  object-fit: cover;
+}
