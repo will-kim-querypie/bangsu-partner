@@ -125,3 +125,12 @@ a {
   text-decoration: none;
   color: inherit;
 }
+button {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}

@@ -23,8 +23,8 @@
   --gray-900: #070e13;
 }
 :root {
-  --max-width: 1000px;
   --padding-x: 16px;
+  --max-width: calc(1000px + 2 * var(--padding-x));
   --primary-color: var(--brand-500);
   --secondary-color: var(--brand-700);
   --bg-color: var(--gray-0);
