@@ -1,0 +1,17 @@
+.container {
+  display: none;
+  text-align: center;
+  max-width: var(--max-width);
+  padding: 40px var(--padding-x);
+  margin: 0 auto;
+}
+@media screen and (min-width: 1000px) {
+  .container {
+    display: block;
+  }
+}
+
+.subText {
+  color: var(--text-secondary);
+  margin-top: 0.6em;
+}

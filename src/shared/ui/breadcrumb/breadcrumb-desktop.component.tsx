@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { HouseFill } from 'react-bootstrap-icons';
-import getSubRoutesViewModel, { getPageInfo } from '@/shared/config/sub-routes';
-import { Listbox } from '@/shared/ui/listbox';
 import styles from './breadcrumb-desktop.module.css';
+import getSubRoutesViewModel, { getPageInfo } from '../../config/sub-routes';
+import { Listbox } from '../listbox';
 
 const subRoutes = getSubRoutesViewModel('breadcrumb-desktop');
 

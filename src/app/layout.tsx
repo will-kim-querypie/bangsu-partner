@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 import { ReactNode } from 'react';
 import { Breadcrumb } from '@/shared/ui/breadcrumb';
 import { GNB } from '@/shared/ui/gnb';
+import { SubPageHero } from '@/shared/ui/sub-page-hero';
 
 export const metadata: Metadata = {
   title: '25년 경력의 방수 시공 전문업체, 엘코엘시즈',
@@ -19,6 +20,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         <GNB />
         <Breadcrumb />
+        <SubPageHero />
+
         {children}
       </body>
     </html>
