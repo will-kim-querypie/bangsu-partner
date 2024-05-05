@@ -24,12 +24,12 @@ const subRoutes: SubRoute[] = [
     ],
   },
   {
-    path: 'flagship/[flagship]',
-    label: '사업분야',
+    path: 'construction-flagship/[flagship]',
+    label: '시공분야',
   },
   {
     path: 'construction-result/[flagship]',
-    label: '시공실적',
+    label: '시공사진',
   },
   {
     path: 'customer',
