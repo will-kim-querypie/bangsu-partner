@@ -89,7 +89,7 @@
   font-size: 14px;
 
   will-change: opacity, right;
-  right: -100%;
+  right: -50%;
   opacity: 0;
   animation: slidein 0.3s forwards;
   animation-delay: calc(var(--order) * 0.04s + 0.05s);
@@ -97,7 +97,7 @@
 @keyframes slidein {
   from {
     opacity: 0;
-    right: -100%;
+    right: -20%;
   }
   to {
     opacity: 1;
