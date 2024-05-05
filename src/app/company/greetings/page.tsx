@@ -1,3 +1,3 @@
 export default function GreetingsPage() {
-  return <div>GreetingsPage</div>;
+  return <main>GreetingsPage</main>;
 }
