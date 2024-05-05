@@ -1,14 +1,14 @@
 :root {
-  --brand-50: #e0f3ff;
-  --brand-100: #b7d8fb;
-  --brand-200: #8cbef2;
-  --brand-300: #60a4ec;
-  --brand-400: #358ae6;
-  --brand-500: #1d71cc;
-  --brand-600: #13589f;
-  --brand-700: #0a3f73;
-  --brand-800: #002647;
-  --brand-900: #000e1d;
+  --brand-50: #dcf6ff;
+  --brand-100: #aedfff;
+  --brand-200: #7ec7ff;
+  --brand-300: #4db1ff;
+  --brand-400: #219bfe;
+  --brand-500: #0d82e5;
+  --brand-600: #0065b3;
+  --brand-700: #004881;
+  --brand-800: #002b50;
+  --brand-900: #000f20;
 
   --gray-0: #ffffff;
   --gray-50: #edf3f8;
@@ -25,7 +25,7 @@
 :root {
   --padding-x: 16px;
   --max-width: calc(1000px + 2 * var(--padding-x));
-  --primary-color: var(--brand-500);
+  --primary-color: var(--brand-400);
   --secondary-color: var(--brand-700);
   --bg-color: var(--gray-0);
   --border-color: var(--gray-100);
@@ -34,7 +34,7 @@
   --text-secondary: var(--gray-500);
   --active-color: var(--brand-600);
   --active-secondary-color: var(--brand-100); /* on bg secondary */
-  --hover-color: var(--brand-500);
+  --hover-color: var(--brand-400);
   --hover-secondary-color: var(--brand-100); /* on bg secondary */
   --disabled-color: var(--gray-400);
   --disabled-bg: var(--gray-100);
