@@ -51,7 +51,7 @@ const processToViewModel = (keyPrefix: string, routes: SubRoute[]): SubRouteView
     if (parent.children) {
       // children이 있는 경우, children을 반환
       return parent.children.map(child => ({
-        key: `${keyPrefix}-${parent.path}-${child.path}-child`,
+        key: `${keyPrefix}-child:${parent.path}-${child.path}`,
         path: `/${parent.path}/${child.path}`,
         label: child.label,
       }));
@@ -59,7 +59,7 @@ const processToViewModel = (keyPrefix: string, routes: SubRoute[]): SubRouteView
     if (parent.path.includes('[flagship]')) {
       // flagship이 포함된 path인 경우, flagship에 따라 children 생성
       return flagships.map(flagship => ({
-        key: `${keyPrefix}-${parent.path}-${flagship.key}-child`,
+        key: `${keyPrefix}-child:${parent.path}-${flagship.key}`,
         path: `/${parent.path.replace('[flagship]', flagship.key)}`,
         label: flagship.label,
       }));
@@ -67,33 +67,43 @@ const processToViewModel = (keyPrefix: string, routes: SubRoute[]): SubRouteView
     // children이 없는 경우, parent 자체를 children으로 반환
     return [
       {
-        key: `${keyPrefix}-${parent.path}-child`,
+        key: `${keyPrefix}-child:${parent.path}`,
         path: `/${parent.path}`,
         label: parent.label,
       },
     ];
   };
 
-  return routes.map(parent => {
-    return {
-      key: `${keyPrefix}-${parent.path}-parent`,
-      label: parent.label,
-      children: getChildren(parent),
-    };
-  });
+  return routes.map(parent => ({
+    key: `${keyPrefix}-parent:${parent.path}`,
+    label: parent.label,
+    children: getChildren(parent),
+  }));
 };
 
 export default function getSubRoutesViewModel(uniqueKey: string): SubRouteViewModel[] {
   return processToViewModel(uniqueKey, subRoutes);
 }
 
-export function getPageLabel(pathname: string): string {
-  const subRoutes = getSubRoutesViewModel('');
-
-  for (const subRoute of subRoutes) {
+export function getPageInfo(pathname: string, predifinedSubRoutes = getSubRoutesViewModel('')) {
+  for (const subRoute of predifinedSubRoutes) {
     const targetChild = subRoute.children.find(child => child.path === pathname);
-    if (targetChild) return targetChild.label;
+    if (targetChild) {
+      return {
+        parent: subRoute,
+        child: targetChild,
+      };
+    }
   }
 
-  return 'Undefined';
+  // NOTE: Invalid pathname 에러를 던져야 하지만, /sw.js 같은 이상한 친구들이 인자로 오는 경우가 있어서 일단 에러 없게 처리
+  return {
+    parent: predifinedSubRoutes[0],
+    child: predifinedSubRoutes[0].children[0],
+  };
+}
+
+export function getPageLabel(pathname: string): string {
+  const currentPage = getPageInfo(pathname);
+  return currentPage.child.label;
 }
