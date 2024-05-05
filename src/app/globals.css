@@ -27,6 +27,7 @@
   --max-width: calc(1000px + 2 * var(--padding-x));
   --primary-color: var(--brand-400);
   --secondary-color: var(--brand-700);
+  --tertiary-color: var(--brand-50);
   --bg-color: var(--gray-0);
   --border-color: var(--gray-100);
   --text-default: var(--gray-700);

@@ -13,7 +13,7 @@ export default function useTypewriter({
   typingSpeed = 150,
   deletingSpeed = 50,
   delayBeforeType = 200,
-  delayBeforeDelete = 3000,
+  delayBeforeDelete = 4000,
 }: UseTypewriterProps) {
   const [state, setState] = useState({
     text: '',
