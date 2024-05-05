@@ -33,14 +33,24 @@
   transition: all;
   transition-duration: 500ms;
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+
+  --drawer-header-height: 50px;
 }
 
 .header {
+  height: var(--drawer-header-height);
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  border-bottom: 1px solid var(--gray-100);
+  border-bottom: 1px solid var(--border-color);
 }
 .headerCloseButton {
   padding: 10px;
+  font-size: 25px;
+}
+
+.content {
+  height: calc(100vh - var(--drawer-header-height));
+  overflow: auto;
+  padding-bottom: 60px;
 }

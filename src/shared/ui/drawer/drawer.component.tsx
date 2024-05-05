@@ -49,15 +49,10 @@ export default function Drawer({
 
       <nav role="navigation" style={getDirectionStyle(direction, size)} className={clsx(styles.container, className)}>
         <header className={styles.header}>
-          <Button
-            className={styles.headerCloseButton}
-            icon={<XLg size={24} />}
-            variant="transparent"
-            onClick={onClose}
-          />
+          <Button className={styles.headerCloseButton} icon={<XLg />} variant="transparent" onClick={onClose} />
         </header>
 
-        {children}
+        <div className={styles.content}>{children}</div>
       </nav>
     </>
   );

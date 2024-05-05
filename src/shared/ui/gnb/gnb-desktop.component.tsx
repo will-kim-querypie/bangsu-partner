@@ -1,5 +1,5 @@
-import Logo from '@/shared/ui/logo/logo.component';
 import styles from './gnb-desktop.module.css';
+import { Logo } from '../logo';
 
 export default function GNBDesktop() {
   return (
