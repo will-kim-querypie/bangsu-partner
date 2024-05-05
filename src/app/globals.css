@@ -26,8 +26,10 @@
   --primary-color: var(--brand-500);
   --secondary-color: var(--brand-700);
   --bg-color: var(--gray-0);
+  --border-color: var(--gray-100);
   --text-default: var(--gray-700);
   --text-static: var(--gray-900);
+  --active-color: var(--brand-600);
   --disabled-color: var(--gray-400);
   --disabled-bg: var(--gray-100);
 

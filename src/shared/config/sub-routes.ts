@@ -86,3 +86,14 @@ const processToViewModel = (keyPrefix: string, routes: SubRoute[]): SubRouteView
 export default function getSubRoutesViewModel(uniqueKey: string): SubRouteViewModel[] {
   return processToViewModel(uniqueKey, subRoutes);
 }
+
+export function getPageLabel(pathname: string): string {
+  const subRoutes = getSubRoutesViewModel('');
+
+  for (const subRoute of subRoutes) {
+    const targetChild = subRoute.children.find(child => child.path === pathname);
+    if (targetChild) return targetChild.label;
+  }
+
+  return 'Undefined';
+}

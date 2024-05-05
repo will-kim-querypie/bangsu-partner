@@ -3,6 +3,7 @@ import './globals.css';
 
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
+import { Breadcrumb } from '@/shared/ui/breadcrumb';
 import { GNB } from '@/shared/ui/gnb';
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <GNB />
+        <Breadcrumb />
         {children}
       </body>
     </html>
