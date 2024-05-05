@@ -1,9 +1,144 @@
 .container {
-  display: none;
+  width: 100%;
   height: 100%;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 var(--padding-x);
+
+  --item-width: 132px;
 }
 @media screen and (min-width: 1000px) {
   .container {
     display: flex;
   }
+}
+
+.categories {
+  height: 100%;
+  display: flex;
+}
+.category {
+  height: 100%;
+  position: relative;
+}
+.category:hover .subMenus {
+  display: flex;
+}
+.category:hover .categoryLink {
+  color: var(--gray-0);
+  background: var(--secondary-color);
+}
+.category:hover .categoryLink:after {
+  content: '';
+  position: absolute;
+  top: calc(50% + 1.4em);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  will-change: width;
+  animation: stretch 0.3s forwards;
+}
+@keyframes stretch {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+.categoryLink {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--item-width);
+}
+.categoryLink.active {
+  color: var(--active-color);
+}
+
+.subMenus {
+  width: var(--item-width);
+  display: none;
+  position: absolute;
+  top: var(--gnb-height);
+  left: 0;
+  flex-direction: column;
+  background: var(--secondary-color);
+  color: var(--gray-0);
+}
+
+.subMenu {
+}
+.subMenu:last-of-type .subMenuLink {
+  padding-bottom: 24px;
+}
+
+.subMenuLink {
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 16px 0;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 14px;
+
+  will-change: opacity, right;
+  right: -100%;
+  opacity: 0;
+  animation: slidein 0.3s forwards;
+  animation-delay: calc(var(--order) * 0.04s + 0.05s);
+}
+@keyframes slidein {
+  from {
+    opacity: 0;
+    right: -100%;
+  }
+  to {
+    opacity: 1;
+    right: 0;
+  }
+}
+.subMenuLink[data-order='1'] {
+  --order: 1;
+}
+.subMenuLink[data-order='2'] {
+  --order: 2;
+}
+.subMenuLink[data-order='3'] {
+  --order: 3;
+}
+.subMenuLink[data-order='4'] {
+  --order: 4;
+}
+.subMenuLink[data-order='5'] {
+  --order: 5;
+}
+.subMenuLink[data-order='6'] {
+  --order: 6;
+}
+.subMenuLink[data-order='7'] {
+  --order: 7;
+}
+.subMenuLink[data-order='8'] {
+  --order: 8;
+}
+.subMenuLink[data-order='9'] {
+  --order: 9;
+}
+.subMenuLink[data-order='10'] {
+  --order: 10;
+}
+
+.subMenuLink:hover {
+  color: var(--hover-secondary-color);
+}
+.subMenuLink.active {
+  color: var(--active-secondary-color);
+  pointer-events: none;
 }

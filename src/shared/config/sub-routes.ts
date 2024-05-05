@@ -68,7 +68,7 @@ const processToViewModel = (keyPrefix: string, routes: SubRoute[]): SubRouteView
     return [
       {
         key: `${keyPrefix}-${parent.path}-child`,
-        path: parent.path,
+        path: `/${parent.path}`,
         label: parent.label,
       },
     ];

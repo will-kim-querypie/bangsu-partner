@@ -23,6 +23,8 @@
   --gray-900: #070e13;
 }
 :root {
+  --max-width: 1000px;
+  --padding-x: 16px;
   --primary-color: var(--brand-500);
   --secondary-color: var(--brand-700);
   --bg-color: var(--gray-0);
@@ -30,6 +32,9 @@
   --text-default: var(--gray-700);
   --text-static: var(--gray-900);
   --active-color: var(--brand-600);
+  --active-secondary-color: var(--brand-100); /* on bg secondary */
+  --hover-color: var(--brand-500);
+  --hover-secondary-color: var(--brand-100); /* on bg secondary */
   --disabled-color: var(--gray-400);
   --disabled-bg: var(--gray-100);
 
@@ -40,6 +45,7 @@
 }
 @media screen and (min-width: 1000px) {
   :root {
+    --padding-x: 20px;
     --gnb-height: 90px;
   }
 }
@@ -51,4 +57,8 @@ body {
   text-rendering: optimizeLegibility;
   scroll-padding-top: var(--gnb-height);
   text-size-adjust: 100%;
+}
+
+main {
+  padding: var(--padding-x);
 }

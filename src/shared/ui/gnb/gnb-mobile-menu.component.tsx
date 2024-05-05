@@ -13,6 +13,8 @@ import useDisclosure from '../../lib/use-disclosure.hook';
 import { Button } from '../button';
 import { Drawer } from '../drawer';
 
+const subRoutes = getSubRoutesViewModel('gnb-mobile');
+
 export default function GnbMobileMenu() {
   const pathname = usePathname();
   const { open, onToggle, onClose } = useDisclosure();
@@ -26,7 +28,7 @@ export default function GnbMobileMenu() {
       <Button onClick={onToggle} className={styles.hamburger} icon={<List size={28} />} variant="transparent" />
       <Drawer id="gnb-drawer" open={open} onClose={onToggle}>
         <div className={styles.menus}>
-          {getSubRoutesViewModel('gnb-mobile').map(({ key, label, children }) => {
+          {subRoutes.map(({ key, label, children }) => {
             const hasCurrentPath = children.some(child => child.path === pathname);
             return (
               <Disclosure key={key} defaultOpen={hasCurrentPath}>

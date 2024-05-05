@@ -4,7 +4,8 @@
   border: none;
   width: 100%;
   display: grid;
-  grid-template-columns: 50px 1fr 50px;
+  grid-template-columns: 24px 1fr 24px;
+  gap: 4px;
   align-items: center;
   padding: 10px;
   background: var(--secondary-color);
