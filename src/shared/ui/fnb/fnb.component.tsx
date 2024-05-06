@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import {
   ADDRESS,
   BUSINESS_NUMBER,
@@ -14,7 +15,7 @@ import styles from './fnb.module.css';
 export default function FNB() {
   return (
     <footer className={styles.container}>
-      <div className={styles.innerContainer}>
+      <div className={clsx('width-limit', styles.innerContainer)}>
         <div className={styles.logoWrap}>
           <Logo width={140} />
         </div>

@@ -1,7 +1,6 @@
 .container {
   width: 100%;
   display: none;
-  border-top: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
 }
 @media screen and (min-width: 1000px) {
@@ -13,13 +12,9 @@
 .innerContainer {
   --container-height: 48px;
 
-  width: 100%;
   height: var(--container-height);
-  max-width: var(--max-width);
   display: flex;
   align-items: center;
-  margin: 0 auto;
-  padding: 0 var(--padding-x);
 }
 
 .homeButton {

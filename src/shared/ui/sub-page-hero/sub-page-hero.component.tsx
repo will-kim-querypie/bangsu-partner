@@ -1,6 +1,7 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
+import clsx from 'clsx';
 import styles from './sub-page-hero.module.css';
 import { getPageInfo } from '../../config/sub-routes';
 import { Typography } from '../typography';
@@ -11,7 +12,7 @@ export default function SubPageHero() {
 
   if (pathname === '/') return null;
   return (
-    <div className={styles.container}>
+    <div className={clsx('width-limit', styles.container)}>
       <Typography type="title1" as="h1">
         {pageInfo.child.label}
       </Typography>

@@ -65,9 +65,17 @@ body {
 }
 
 main {
+  box-sizing: border-box;
+}
+main:not([data-home='true']) {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+main:not([data-home='true']),
+.width-limit {
   width: 100%;
   max-width: var(--max-width);
-  padding: 20px var(--padding-x);
   margin: 0 auto;
-  box-sizing: border-box;
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { HouseFill } from 'react-bootstrap-icons';
+import clsx from 'clsx';
 import styles from './breadcrumb-desktop.module.css';
 import getSubRoutesViewModel, { getPageInfo } from '../../config/sub-routes';
 import { Listbox } from '../listbox';
@@ -14,7 +15,7 @@ export default function BreadcrumbDesktop() {
 
   return (
     <div className={styles.container}>
-      <div className={styles.innerContainer}>
+      <div className={clsx('width-limit', styles.innerContainer)}>
         <Link href="/" className={styles.homeButton}>
           <HouseFill size={18} />
         </Link>

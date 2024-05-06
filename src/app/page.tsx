@@ -11,7 +11,7 @@ export default async function HomePage() {
   const posts: NewestPostListDto = await fetcher('/api/flagship/newest-posts');
 
   return (
-    <>
+    <main data-home="true">
       <div className={styles.hero}>
         <div className={clsx(styles.overlay, styles.heroOverlay)}>
           <h1 className={styles.heroTitle}>
@@ -32,7 +32,7 @@ export default async function HomePage() {
         </div>
       </div>
 
-      <main>
+      <div className="width-limit">
         <div className={styles.previewCards}>
           {posts.map(({ flagshipDetail, newestPost }) => (
             <Link
@@ -51,7 +51,7 @@ export default async function HomePage() {
             </Link>
           ))}
         </div>
-      </main>
-    </>
+      </div>
+    </main>
   );
 }

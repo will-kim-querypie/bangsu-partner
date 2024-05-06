@@ -4,12 +4,10 @@
 }
 
 .innerContainer {
-  width: 100%;
-  max-width: var(--max-width);
   display: flex;
   gap: 20px;
-  margin: 0 auto;
-  padding: 24px var(--padding-x) 30px;
+  padding-top: 24px;
+  padding-bottom: 30px;
 }
 
 .logoWrap {
