@@ -1,0 +1,12 @@
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.icon {
+  margin-bottom: 0.15em;
+}
