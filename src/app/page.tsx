@@ -40,8 +40,16 @@ export default async function HomePage() {
               href={`/construction-flagship/${flagshipDetail.key}`}
               className={styles.previewCard}
             >
-              {newestPost && <Image src={newestPost.firstImage.src} alt={newestPost.firstImage.alt} fill />}
-              {!newestPost && <Image src="/flagship-default.jpeg" alt="공사 기본 이미지" fill />}
+              {newestPost ? (
+                <Image
+                  className={styles.previewCardImage}
+                  src={newestPost.firstImage.src}
+                  alt={newestPost.firstImage.alt}
+                  fill
+                />
+              ) : (
+                <Image className={styles.previewCardImage} src="/flagship-default.jpeg" alt="공사 기본 이미지" fill />
+              )}
 
               <div className={clsx(styles.overlay, styles.previewCardOverlay)}>
                 <Typography type="body2" className={styles.preivewCardLabel}>
@@ -52,6 +60,16 @@ export default async function HomePage() {
           ))}
         </div>
       </div>
+
+      {/*<div className={styles.customerCardsBg}>*/}
+      {/*  <div className="width-limit">*/}
+      {/*    <div className={styles.customerCards}>*/}
+      {/*      <div className={styles.customerCard}></div>*/}
+      {/*      <div className={styles.customerCard}></div>*/}
+      {/*      <div className={styles.customerCard}></div>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</div>*/}
     </main>
   );
 }

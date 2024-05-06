@@ -112,3 +112,23 @@
     width: 100%;
   }
 }
+
+/**
+ * customer cards
+ */
+/*.customerCardsBg {*/
+/*  width: 100%;*/
+/*  background: var(--bg-secondary-color);*/
+/*}*/
+/*.customerCards {*/
+/*  display: grid;*/
+/*  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+/*  grid-template-rows: 300px;*/
+/*  column-gap: 1rem;*/
+/*  padding: 2em 0;*/
+/*}*/
+/*.customerCard {*/
+/*  position: relative;*/
+/*  border-radius: var(--border-radius);*/
+/*  background: var(--bg-color);*/
+/*}*/
