@@ -1,4 +1,4 @@
-import { flagships } from '@/shared/config/flagship';
+import { FLAGSHIP_DETAILS } from '@/shared/config/flagship';
 
 type SubRoute = {
   path: string;
@@ -58,7 +58,7 @@ const processToViewModel = (keyPrefix: string, routes: SubRoute[]): SubRouteView
     }
     if (parent.path.includes('[flagship]')) {
       // flagship이 포함된 path인 경우, flagship에 따라 children 생성
-      return flagships.map(flagship => ({
+      return FLAGSHIP_DETAILS.map(flagship => ({
         key: `${keyPrefix}-child:${parent.path}-${flagship.key}`,
         path: `/${parent.path.replace('[flagship]', flagship.key)}`,
         label: flagship.label,

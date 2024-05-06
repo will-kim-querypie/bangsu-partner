@@ -7,13 +7,13 @@ export enum Flagship {
   OtherWork = 'other-work', // 기타공사
 }
 
-type FlagshipDetail = {
+export type FlagshipDetail = {
   key: Flagship;
   label: string;
   description: string;
 };
 
-export const flagships: FlagshipDetail[] = [
+export const FLAGSHIP_DETAILS: FlagshipDetail[] = [
   {
     key: Flagship.RoofUrethaneWaterproofing,
     label: '옥상우레탄방수',
@@ -50,3 +50,7 @@ export const flagships: FlagshipDetail[] = [
     description: '',
   },
 ];
+
+export function isFlagship(value: unknown): value is Flagship {
+  return Object.values(Flagship).includes(value as Flagship);
+}
