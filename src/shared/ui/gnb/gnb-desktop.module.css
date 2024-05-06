@@ -27,7 +27,7 @@
   display: flex;
 }
 .category:hover .categoryLink {
-  color: var(--gray-0);
+  color: var(--text-white);
   background: var(--secondary-color);
 }
 .category:hover .categoryLink:after {
@@ -70,7 +70,7 @@
   left: 0;
   flex-direction: column;
   background: var(--secondary-color);
-  color: var(--gray-0);
+  color: var(--text-white);
 }
 
 .subMenu {

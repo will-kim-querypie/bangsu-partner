@@ -30,8 +30,10 @@
   --secondary-color: var(--brand-700);
   --tertiary-color: var(--brand-50);
   --bg-color: var(--gray-0);
+  --bg-secondary-color: var(--gray-50);
   --bg-dimmed-color: rgba(0, 0, 0, 0.6);
   --border-color: var(--gray-100);
+  --text-white: var(--gray-0);
   --text-default: var(--gray-700);
   --text-static: var(--gray-900);
   --text-secondary: var(--gray-500);

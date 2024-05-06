@@ -60,7 +60,7 @@
 
 /* Color and Variant specific styles */
 .fill.primary {
-  color: var(--gray-0);
+  color: var(--text-white);
   background-color: var(--primary-color);
 }
 .outline.primary {
@@ -68,7 +68,7 @@
   border-color: var(--primary-color);
 }
 .fill.secondary {
-  color: var(--gray-0);
+  color: var(--text-white);
   background-color: var(--secondary-color);
 }
 .outline.secondary {

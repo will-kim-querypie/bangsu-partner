@@ -9,7 +9,7 @@
   align-items: center;
   padding: 10px;
   background: var(--secondary-color);
-  color: var(--gray-0);
+  color: var(--text-white);
   cursor: pointer;
 }
 @media screen and (min-width: 1000px) {

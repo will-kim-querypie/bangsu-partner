@@ -16,7 +16,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: var(--gray-0);
+  color: var(--text-white);
 }
 .overlay.heroOverlay {
   padding: 0 var(--padding-x);
@@ -59,7 +59,7 @@
 }
 
 /**
- * cards
+ * preview cards
  */
 .previewCards {
   display: grid;
@@ -81,6 +81,11 @@
   top: 0;
   left: 0;
   z-index: 1;
+  border-radius: inherit;
+}
+
+.previewCardImage {
+  border-radius: inherit;
 }
 
 .preivewCardLabel {

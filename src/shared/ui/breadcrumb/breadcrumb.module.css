@@ -3,5 +3,5 @@
   position: sticky;
   top: var(--gnb-height);
   z-index: var(--z-breadcrumb);
-  background: var(--gray-0);
+  background: var(--bg-color);
 }
