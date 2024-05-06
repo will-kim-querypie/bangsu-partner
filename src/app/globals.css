@@ -25,10 +25,12 @@
 :root {
   --padding-x: 16px;
   --max-width: calc(1000px + 2 * var(--padding-x));
+  --border-radius: 4px;
   --primary-color: var(--brand-400);
   --secondary-color: var(--brand-700);
   --tertiary-color: var(--brand-50);
   --bg-color: var(--gray-0);
+  --bg-dimmed-color: rgba(0, 0, 0, 0.6);
   --border-color: var(--gray-100);
   --text-default: var(--gray-700);
   --text-static: var(--gray-900);
