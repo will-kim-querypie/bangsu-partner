@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.imageSection {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url('/greetings.jpeg') no-repeat center/cover;
+  border-radius: var(--border-radius);
+}
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.floatRight {
+  margin-left: auto;
+}
+
+@media screen and (min-width: 1000px) {
+  .container {
+    flex-direction: row;
+  }
+  .imageSection {
+    height: 400px;
+  }
+}
