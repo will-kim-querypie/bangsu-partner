@@ -5,6 +5,8 @@ import { Flagship } from '@/shared/config/flagship';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ConstructionResultPage({ params }: { params: { flagship: Flagship } }) {
   const { posts }: PostListDto = await nextApiFetcher(`flagship/${params.flagship}/posts`);
 

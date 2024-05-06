@@ -6,6 +6,8 @@ import { AutoTypo } from '@/shared/ui/auto-typo';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
 
+export const dynamic = 'force-dynamic';
+
 export default async function HomePage() {
   const posts: NewestPostListDto = await nextApiFetcher('flagship/newest-posts');
 

@@ -5,6 +5,8 @@ import { Flagship } from '@/shared/config/flagship';
 import BackButton from './back-button.component';
 import styles from './page.module.css';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ConstructionResultDetailPage({
   params,
 }: {
