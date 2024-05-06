@@ -26,7 +26,7 @@ export default function LocationPage() {
       <Map
         level={7}
         center={{ lat: ADDRESS_COORDINATE.latitude, lng: ADDRESS_COORDINATE.longitude }}
-        style={{ width: '100%', height: '360px' }}
+        className={styles.map}
       >
         <MapMarker position={{ lat: ADDRESS_COORDINATE.latitude, lng: ADDRESS_COORDINATE.longitude }} />
       </Map>
