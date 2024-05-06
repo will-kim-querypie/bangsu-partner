@@ -42,6 +42,7 @@
 
   --gnb-height: 50px;
 
+  --z-breadcrumb: 99;
   --z-gnb: 100;
   --z-drawer: 1000;
 }

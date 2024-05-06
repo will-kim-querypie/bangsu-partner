@@ -1,0 +1,7 @@
+.container {
+  width: 100%;
+  position: sticky;
+  top: var(--gnb-height);
+  z-index: var(--z-breadcrumb);
+  background: var(--gray-0);
+}
