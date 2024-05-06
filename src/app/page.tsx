@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
 import type { NewestPostListDto } from '@/app/api/flagship/newest-posts/route';
@@ -39,18 +38,13 @@ export default async function HomePage() {
               key={`preview-${flagshipDetail.key}`}
               href={`/construction-flagship/${flagshipDetail.key}`}
               className={styles.previewCard}
+              style={{
+                backgroundImage: `url(${newestPost ? newestPost.firstImage.src : '/flagship-default.jpeg'})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+              }}
             >
-              {newestPost ? (
-                <Image
-                  className={styles.previewCardImage}
-                  src={newestPost.firstImage.src}
-                  alt={newestPost.firstImage.alt}
-                  fill
-                />
-              ) : (
-                <Image className={styles.previewCardImage} src="/flagship-default.jpeg" alt="공사 기본 이미지" fill />
-              )}
-
               <div className={clsx(styles.overlay, styles.previewCardOverlay)}>
                 <Typography type="body2" className={styles.preivewCardLabel}>
                   {flagshipDetail.label}
