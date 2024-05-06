@@ -35,7 +35,7 @@
   --text-secondary: var(--gray-500);
   --active-color: var(--brand-600);
   --active-secondary-color: var(--brand-100); /* on bg secondary */
-  --hover-color: var(--brand-400);
+  --hover-color: var(--brand-500);
   --hover-secondary-color: var(--brand-100); /* on bg secondary */
   --disabled-color: var(--gray-400);
   --disabled-bg: var(--gray-100);

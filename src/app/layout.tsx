@@ -4,6 +4,7 @@ import './globals.css';
 import { Metadata } from 'next';
 import { ReactNode } from 'react';
 import { Breadcrumb } from '@/shared/ui/breadcrumb';
+import { FNB } from '@/shared/ui/fnb';
 import { GNB } from '@/shared/ui/gnb';
 import { SubPageHero } from '@/shared/ui/sub-page-hero';
 
@@ -23,6 +24,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <SubPageHero />
 
         {children}
+
+        <FNB />
       </body>
     </html>
   );

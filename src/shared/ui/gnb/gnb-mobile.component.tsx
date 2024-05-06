@@ -8,7 +8,7 @@ import { ResponsiveImage } from '../responsive-image';
 
 export default function GNBMobile() {
   return (
-    <div className={styles.container}>
+    <nav className={styles.container}>
       <div className={styles.icons}>
         <a href={`tel:${PHONE.replace(/-/g, '')}`}>
           <TelephoneOutboundFill size={20} />
@@ -23,6 +23,6 @@ export default function GNBMobile() {
       </Link>
 
       <GnbMobileMenu />
-    </div>
+    </nav>
   );
 }
