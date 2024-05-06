@@ -1,12 +1,19 @@
+import Image from 'next/image';
+import Link from 'next/link';
+import clsx from 'clsx';
+import type { NewestPostListDto } from '@/app/api/flagship/newest-posts/route';
+import fetcher from '@/shared/api/fetcher';
 import { AutoTypo } from '@/shared/ui/auto-typo';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
 
-export default function Home() {
+export default async function HomePage() {
+  const posts: NewestPostListDto = await fetcher('/api/flagship/newest-posts');
+
   return (
     <>
       <div className={styles.hero}>
-        <div className={styles.heroOverlay}>
+        <div className={clsx(styles.overlay, styles.heroOverlay)}>
           <h1 className={styles.heroTitle}>
             <span>고객을 위한</span>
             <span className={styles.heroTitleAuto}>
@@ -25,7 +32,26 @@ export default function Home() {
         </div>
       </div>
 
-      <main>Home</main>
+      <main>
+        <div className={styles.previewCards}>
+          {posts.map(({ flagshipDetail, newestPost }) => (
+            <Link
+              key={`preview-${flagshipDetail.key}`}
+              href={`/construction-flagship/${flagshipDetail.key}`}
+              className={styles.previewCard}
+            >
+              {newestPost && <Image src={newestPost.firstImage.src} alt={newestPost.firstImage.alt} fill />}
+              {!newestPost && <Image src="/flagship-default.jpeg" alt="공사 기본 이미지" fill />}
+
+              <div className={clsx(styles.overlay, styles.previewCardOverlay)}>
+                <Typography type="body2" className={styles.preivewCardLabel}>
+                  {flagshipDetail.label}
+                </Typography>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </main>
     </>
   );
 }

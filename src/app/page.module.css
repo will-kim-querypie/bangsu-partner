@@ -1,14 +1,13 @@
+/**
+ * hero
+ */
 .hero {
-  position: relative;
   width: 100%;
   height: calc(100vh - var(--gnb-height));
   background: url('/home-bg.jpg') no-repeat center/cover;
 }
 
-.heroOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
+.overlay {
   width: 100%;
   height: 100%;
   background: var(--bg-dimmed-color);
@@ -18,6 +17,8 @@
   align-items: center;
   text-align: center;
   color: var(--gray-0);
+}
+.overlay.heroOverlay {
   padding: 0 var(--padding-x);
 }
 
@@ -55,4 +56,54 @@
 
 .heroDescription {
   margin-top: 10px;
+}
+
+/**
+ * cards
+ */
+.previewCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: row dense;
+  gap: 2.5rem 1rem;
+  padding: 2em 0;
+}
+
+.previewCard {
+  position: relative;
+  border-radius: var(--border-radius);
+}
+
+.overlay.previewCardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.preivewCardLabel {
+  position: relative;
+  width: max-content;
+}
+.previewCard:hover .preivewCardLabel:after {
+  content: '';
+  position: absolute;
+  top: calc(50% + 1.4em);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  will-change: width;
+  animation: stretch 0.2s forwards;
+}
+@keyframes stretch {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
