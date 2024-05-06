@@ -1,0 +1,40 @@
+.posts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  grid-auto-flow: row dense;
+  gap: 2.5rem 1rem;
+}
+@media screen and (min-width: 1000px) {
+  .posts {
+    padding: 2em 0;
+  }
+}
+
+.post {
+  display: flex;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+.post:hover .postTitleWrap {
+  display: flex;
+}
+
+.postImage {
+  flex: 1;
+  height: 100%;
+}
+
+.postTitleWrap {
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dimmed-color);
+}
+.postTitle {
+  color: var(--text-white);
+  user-select: none;
+}
