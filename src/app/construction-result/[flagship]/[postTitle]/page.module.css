@@ -1,0 +1,13 @@
+.header {
+  margin-bottom: 2em;
+}
+
+.images {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.image {
+  position: relative;
+}

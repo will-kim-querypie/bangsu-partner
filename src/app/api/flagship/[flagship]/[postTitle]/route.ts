@@ -7,18 +7,18 @@ export type PostDetailDto = {
   images: FlagshipPosts.Image[];
 };
 
-export const GET = async (_request: Request, { params }: { params: { flagship: string; postTile: string } }) => {
+export const GET = async (_request: Request, { params }: { params: { flagship: string; postTitle: string } }) => {
   if (!isFlagship(params.flagship)) {
     return new Response('Unknown flagship', { status: 404 });
   }
-  if (!(await FlagshipPosts.isValidPostTitle(params.flagship, params.postTile))) {
+  if (!(await FlagshipPosts.isValidPostTitle(params.flagship, params.postTitle))) {
     return new Response('Unknown post title', { status: 404 });
   }
 
   const bundle = await FlagshipPosts.get(params.flagship);
   const response: PostDetailDto = {
     flagshipDetail: bundle.flagshipDetail,
-    images: bundle.posts.find(post => post.title === params.postTile)?.images ?? [],
+    images: bundle.posts.find(post => post.title === params.postTitle)?.images ?? [],
   };
 
   return NextResponse.json(response, { status: 200 });

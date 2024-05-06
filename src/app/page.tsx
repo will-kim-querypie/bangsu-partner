@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import clsx from 'clsx';
 import type { NewestPostListDto } from '@/app/api/flagship/newest-posts/route';
-import fetcher from '@/shared/api/fetcher';
+import nextApiFetcher from '@/shared/api/nextApiFetcher';
 import { AutoTypo } from '@/shared/ui/auto-typo';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
 
 export default async function HomePage() {
-  const posts: NewestPostListDto = await fetcher('/api/flagship/newest-posts');
+  const posts: NewestPostListDto = await nextApiFetcher('flagship/newest-posts');
 
   return (
     <main data-home="true">

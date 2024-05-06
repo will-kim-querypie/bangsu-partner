@@ -1,11 +1,12 @@
+import Link from 'next/link';
 import type { PostListDto } from '@/app/api/flagship/[flagship]/posts/route';
-import fetcher from '@/shared/api/fetcher';
+import nextApiFetcher from '@/shared/api/nextApiFetcher';
 import { Flagship } from '@/shared/config/flagship';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
 
 export default async function ConstructionResultPage({ params }: { params: { flagship: Flagship } }) {
-  const { posts }: PostListDto = await fetcher(`/api/flagship/${params.flagship}/posts`);
+  const { posts }: PostListDto = await nextApiFetcher(`flagship/${params.flagship}/posts`);
 
   return (
     <main>
@@ -19,11 +20,11 @@ export default async function ConstructionResultPage({ params }: { params: { fla
               background: `url(${post.firstImage.src}) no-repeat center/cover`,
             }}
           >
-            <div className={styles.postTitleWrap}>
+            <Link href={`/construction-result/${params.flagship}/${post.title}`} className={styles.postTitleWrap}>
               <Typography type="detail1" className={styles.postTitle}>
                 {post.title}
               </Typography>
-            </div>
+            </Link>
           </li>
         ))}
       </ul>

@@ -96,6 +96,17 @@ export function getPageInfo(pathname: string, predifinedSubRoutes = getSubRoutes
     }
   }
 
+  // NOTE: 일치하는 경로를 찾을 수 없다면, 상세 페이지임. 예시로 /construction-flagship/[flagship]/[postTitle]. 이 경우 부모 페이지 탐색
+  for (const subRoute of predifinedSubRoutes) {
+    const targetChild = subRoute.children.find(child => pathname.startsWith(child.path));
+    if (targetChild) {
+      return {
+        parent: subRoute,
+        child: targetChild,
+      };
+    }
+  }
+
   // NOTE: Invalid pathname 에러를 던져야 하지만, /sw.js 같은 이상한 친구들이 인자로 오는 경우가 있어서 일단 에러 없게 처리
   return {
     parent: predifinedSubRoutes[0],
