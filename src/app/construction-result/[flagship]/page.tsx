@@ -19,7 +19,8 @@ export default async function ConstructionResultPage({ params }: { params: { fla
             role="button"
             className={styles.post}
             style={{
-              background: `url(${post.firstImage.src}) no-repeat center/cover`,
+              // NOTE: 공백이 포함된 문자는 url에 사용할 수 없음
+              background: `url(${post.firstImage.src.replace(/ /g, '%20')}) no-repeat center/cover`,
             }}
           >
             <Link href={`/construction-result/${params.flagship}/${post.title}`} className={styles.postTitleWrap}>
