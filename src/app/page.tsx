@@ -12,7 +12,7 @@ export default async function HomePage() {
   const posts: NewestPostListDto = await nextApiFetcher('flagship/newest-posts');
 
   return (
-    <main data-home="true">
+    <main data-home="true" className={styles.container}>
       <div className={styles.hero}>
         <div className={clsx(styles.overlay, styles.heroOverlay)}>
           <h1 className={styles.heroTitle}>
