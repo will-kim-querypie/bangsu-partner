@@ -38,7 +38,7 @@ export default async function HomePage() {
           {posts.map(({ flagshipDetail, newestPost }) => (
             <Link
               key={`preview-${flagshipDetail.key}`}
-              href={`/construction-flagship/${flagshipDetail.key}`}
+              href={`/construction-result/${flagshipDetail.key}`}
               className={styles.previewCard}
               style={{
                 backgroundImage: `url(${newestPost ? newestPost.firstImage.src : '/flagship-default.jpeg'})`,
