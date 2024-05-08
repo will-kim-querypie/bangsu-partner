@@ -106,7 +106,7 @@ function validateImageExtension(filename: string): boolean {
 
 function imageFactory(fullPath: string, postTitle: string, imageName: string): Image {
   return {
-    src: fullPath.split('/public').pop() as string,
+    src: fullPath.split('/public').pop()?.replace(/ /g, '%20') as string, // NOTE: 공백이 포함된 문자는 url에 사용할 수 없음
     alt: `${postTitle}-${imageName}`,
   };
 }
