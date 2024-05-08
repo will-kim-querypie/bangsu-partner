@@ -63,13 +63,16 @@
   color: var(--text-white);
   background-color: var(--primary-color);
 }
-.outline.primary {
-  color: var(--text-default);
-  border-color: var(--primary-color);
-}
 .fill.secondary {
   color: var(--text-white);
   background-color: var(--secondary-color);
+}
+.outline {
+  border: 1px solid;
+}
+.outline.primary {
+  color: var(--text-default);
+  border-color: var(--primary-color);
 }
 .outline.secondary {
   color: var(--text-default);

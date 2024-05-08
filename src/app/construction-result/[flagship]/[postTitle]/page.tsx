@@ -1,9 +1,10 @@
-import Image from 'next/image';
 import type { PostDetailDto } from '@/app/api/flagship/[flagship]/[postTitle]/route';
 import nextApiFetcher from '@/shared/api/nextApiFetcher';
 import { Flagship } from '@/shared/config/flagship';
-import BackButton from './back-button.component';
+import BackToListButton from './back-to-list-button.component';
+import ImageGallery from './image-gallery.component';
 import styles from './page.module.css';
+import Title from './title.component';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,27 +14,17 @@ export default async function ConstructionResultDetailPage({
   params: { flagship: Flagship; postTitle: string };
 }) {
   const { images }: PostDetailDto = await nextApiFetcher(`flagship/${params.flagship}/${params.postTitle}`);
+  const backUrl = `/construction-result/${params.flagship}`;
 
   return (
     <main>
       <div className={styles.header}>
-        <BackButton backUrl={`/construction-result/${params.flagship}`} content={params.postTitle} />
+        <Title backUrl={backUrl} content={decodeURIComponent(params.postTitle)} />
       </div>
 
-      <ul className={styles.images}>
-        {images.map(image => (
-          <li key={image.src} className={styles.image}>
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={0}
-              height={0}
-              sizes="100vw"
-              style={{ width: '100%', height: 'auto' }}
-            />
-          </li>
-        ))}
-      </ul>
+      <ImageGallery images={images} />
+
+      <BackToListButton backUrl={backUrl} />
     </main>
   );
 }

@@ -1,13 +1,17 @@
 .header {
   margin-bottom: 2em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .images {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
 .image {
   position: relative;
+  width: calc(var(--max-width) * 0.4);
+  max-width: 100%;
 }

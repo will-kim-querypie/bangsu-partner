@@ -1,0 +1,15 @@
+.textTitle {
+  display: block;
+}
+.buttonTitle {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .textTitle {
+    display: none;
+  }
+  .buttonTitle {
+    display: flex;
+  }
+}

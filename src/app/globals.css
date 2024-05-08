@@ -25,6 +25,7 @@
 :root {
   --padding-x: 16px;
   --max-width: calc(1000px + 2 * var(--padding-x));
+  --max-width-without-padding: 1000px; /* padding-x를 고려하지 않아도 되고, border top, border bottom을 표시해야하는 컨테이너에 사용 */
   --border-radius: 4px;
   --primary-color: var(--brand-400);
   --secondary-color: var(--brand-700);
