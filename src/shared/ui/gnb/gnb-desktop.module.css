@@ -7,7 +7,7 @@
   gap: 20px;
   padding: 0 var(--padding-x);
 
-  --item-width: 132px;
+  --item-width: 8.25rem;
 }
 @media screen and (min-width: 1000px) {
   .container {
