@@ -1,14 +1,11 @@
 import Link from 'next/link';
-import type { PostListDto } from '@/app/api/flagship/[flagship]/posts/route';
-import nextApiFetcher from '@/shared/api/nextApiFetcher';
+import { getPostList } from '@/shared/api/posts/controller';
 import { Flagship } from '@/shared/config/flagship';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
 
-export const dynamic = 'force-dynamic';
-
-export default async function ConstructionResultPage({ params }: { params: { flagship: Flagship } }) {
-  const { posts }: PostListDto = await nextApiFetcher(`flagship/${params.flagship}/posts`);
+export default function ConstructionResultPage({ params }: { params: { flagship: Flagship } }) {
+  const { posts } = getPostList(params.flagship);
 
   return (
     <main>

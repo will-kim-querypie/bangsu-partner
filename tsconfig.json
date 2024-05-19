@@ -23,6 +23,12 @@
       "@/*": ["./src/*"]
     }
   },
+  "ts-node": {
+    // @see https://stackoverflow.com/questions/58273824/typescript-cannot-use-import-statement-outside-a-module
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  },
   "include": ["types/**/*.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "kakao.maps.d.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,7 +1,6 @@
 import fs from 'fs';
-import { Record } from 'react-bootstrap-icons';
 import { glob } from 'glob';
-import { Flagship, FLAGSHIP_DETAILS, FlagshipDetail, isFlagship } from '../config/flagship';
+import { Flagship, FLAGSHIP_DETAILS, FlagshipDetail, isFlagship } from '../../config/flagship';
 
 const DIRNAME = `${process.cwd()}/public/flagships`;
 const IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'jfif', 'png', 'webp', 'bmp'];
@@ -23,11 +22,11 @@ export type Bundle = {
   posts: Post[]; // can be empty
 };
 
-export async function get(flagship: Flagship): Promise<Bundle> {
-  const paths = await glob(`${DIRNAME}/${flagship}/**/*.{${IMAGE_EXTENSIONS.join(',')}}`);
-
-  return group(sortByNewest(paths)).find(bundle => bundle.flagshipDetail.key === flagship) as Bundle;
-}
+// export async function get(flagship: Flagship): Promise<Bundle> {
+//   const paths = await glob(`${DIRNAME}/${flagship}/**/*.{${IMAGE_EXTENSIONS.join(',')}}`);
+//
+//   return group(sortByNewest(paths)).find(bundle => bundle.flagshipDetail.key === flagship) as Bundle;
+// }
 
 export async function getAll(): Promise<Bundle[]> {
   const paths = await glob(`${DIRNAME}/**/*.{${IMAGE_EXTENSIONS.join(',')}}`);
@@ -35,17 +34,20 @@ export async function getAll(): Promise<Bundle[]> {
   return group(sortByNewest(paths));
 }
 
-export async function isValidPostTitle(flagship: Flagship, postTitle: string): Promise<boolean> {
-  const paths = await glob(`${DIRNAME}/${flagship}/${postTitle}/*.{${IMAGE_EXTENSIONS.join(',')}}`);
-
-  return paths.length > 0;
-}
+// export async function isValidPostTitle(flagship: Flagship, postTitle: string): Promise<boolean> {
+//   const paths = await glob(`${DIRNAME}/${flagship}/${postTitle}/*.{${IMAGE_EXTENSIONS.join(',')}}`);
+//
+//   return paths.length > 0;
+// }
 
 function sortByNewest(paths: string[]): string[] {
   return paths
     .map(name => ({ name, ctime: fs.statSync(name).ctime }))
-    .sort((a, b) => +b.ctime - +a.ctime)
+    .sort((a, b) => +getDay(b.ctime) - +getDay(a.ctime) /* 년월일만 비교 */)
     .map(({ name }) => name);
+}
+function getDay(date: Date) {
+  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
 }
 
 /**

@@ -1,15 +1,12 @@
 import Link from 'next/link';
 import clsx from 'clsx';
-import type { NewestPostListDto } from '@/app/api/flagship/newest-posts/route';
-import nextApiFetcher from '@/shared/api/nextApiFetcher';
+import { getNewestPostList } from '@/shared/api/posts/controller';
 import { AutoTypo } from '@/shared/ui/auto-typo';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
 
-export const dynamic = 'force-dynamic';
-
-export default async function HomePage() {
-  const posts: NewestPostListDto = await nextApiFetcher('flagship/newest-posts');
+export default function HomePage() {
+  const posts = getNewestPostList();
 
   return (
     <main data-home="true" className={styles.container}>

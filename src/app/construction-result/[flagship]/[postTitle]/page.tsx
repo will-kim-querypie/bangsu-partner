@@ -1,19 +1,16 @@
-import type { PostDetailDto } from '@/app/api/flagship/[flagship]/[postTitle]/route';
-import nextApiFetcher from '@/shared/api/nextApiFetcher';
+import { getPostDetail } from '@/shared/api/posts/controller';
 import { Flagship } from '@/shared/config/flagship';
 import BackToListButton from './back-to-list-button.component';
 import ImageGallery from './image-gallery.component';
 import styles from './page.module.css';
 import Title from './title.component';
 
-export const dynamic = 'force-dynamic';
-
-export default async function ConstructionResultDetailPage({
+export default function ConstructionResultDetailPage({
   params,
 }: {
   params: { flagship: Flagship; postTitle: string };
 }) {
-  const { images }: PostDetailDto = await nextApiFetcher(`flagship/${params.flagship}/${params.postTitle}`);
+  const { images } = getPostDetail(params.flagship, params.postTitle);
   const backUrl = `/construction-result/${params.flagship}`;
 
   return (

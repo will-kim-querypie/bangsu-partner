@@ -4,7 +4,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prepare": "husky",
+    "cache:posts": "ts-node src/shared/api/posts/cache.ts",
+    "prepare": "husky && npm run cache:posts",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -33,7 +34,8 @@
     "@types/react-image-gallery": "^1.2.4",
     "husky": "^9.0.11",
     "kakao.maps.d.ts": "^0.1.39",
-    "lint-staged": "^15.2.2"
+    "lint-staged": "^15.2.2",
+    "ts-node": "^10.9.2"
   },
   "optionalDependencies": {
     "@typescript-eslint/eslint-plugin": "^7.6.0",
