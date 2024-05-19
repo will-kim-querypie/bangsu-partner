@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
+import * as PostsService from '@/shared/api/posts.service';
 import { FlagshipDetail } from '@/shared/config/flagship';
-import * as FlagshipPosts from '@/shared/config/flagship-posts';
 
 type PostPreview = {
-  title: FlagshipPosts.Post['title'];
-  firstImage: FlagshipPosts.Image;
+  title: PostsService.Post['title'];
+  firstImage: PostsService.Image;
 };
 export type NewestPostListDto = {
   flagshipDetail: FlagshipDetail;
@@ -12,7 +12,7 @@ export type NewestPostListDto = {
 }[];
 
 export const GET = async () => {
-  const bundles = await FlagshipPosts.getAll();
+  const bundles = await PostsService.getAll();
 
   const response: NewestPostListDto = bundles.map(bundle => ({
     flagshipDetail: bundle.flagshipDetail,

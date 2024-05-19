@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
+import * as PostsService from '@/shared/api/posts.service';
 import { isFlagship, FlagshipDetail } from '@/shared/config/flagship';
-import * as FlagshipPosts from '@/shared/config/flagship-posts';
 
 type PostPreview = {
-  title: FlagshipPosts.Post['title'];
-  firstImage: FlagshipPosts.Image;
+  title: PostsService.Post['title'];
+  firstImage: PostsService.Image;
 };
 export type PostListDto = {
   flagshipDetail: FlagshipDetail;
@@ -16,7 +16,7 @@ export const GET = async (_request: Request, { params }: { params: { flagship: s
     return new Response('Unknown flagship', { status: 404 });
   }
 
-  const bundle = await FlagshipPosts.get(params.flagship);
+  const bundle = await PostsService.get(params.flagship);
   const response: PostListDto = {
     flagshipDetail: bundle.flagshipDetail,
     posts: bundle.posts.map(post => ({

@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { Record } from 'react-bootstrap-icons';
 import { glob } from 'glob';
-import { Flagship, FLAGSHIP_DETAILS, FlagshipDetail, isFlagship } from './flagship';
+import { Flagship, FLAGSHIP_DETAILS, FlagshipDetail, isFlagship } from '../config/flagship';
 
 const DIRNAME = `${process.cwd()}/public/flagships`;
 const IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'jfif', 'png', 'webp', 'bmp'];
