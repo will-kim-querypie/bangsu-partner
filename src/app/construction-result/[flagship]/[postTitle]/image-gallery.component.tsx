@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react';
 import ReactImageGallery, { type ReactImageGalleryItem } from 'react-image-gallery';
-import type { PostDetailDto } from '@/app/api/flagship/[flagship]/[postTitle]/route';
+import type { PostDetailDto } from '@/shared/api/posts/controller';
 import 'react-image-gallery/styles/css/image-gallery.css';
 
 export default function ImageGallery({ images }: { images: PostDetailDto['images'] }) {

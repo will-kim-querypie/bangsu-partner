@@ -39,7 +39,7 @@ export function getPostList(flagship: string): PostListDto {
   };
 }
 
-type PostDetailDto = {
+export type PostDetailDto = {
   flagshipDetail: FlagshipDetail;
   images: PostsService.Image[];
 };
