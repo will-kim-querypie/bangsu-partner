@@ -24,8 +24,9 @@ export type Bundle = {
 
 export async function getAll() {
   const paths = await glob(`${DIRNAME}/**/*.{${IMAGE_EXTENSIONS.join(',')}}`);
+  const normalizedPaths = paths.map(path => path.normalize('NFC'));
 
-  return group(sortPaths(paths));
+  return group(sortPaths(normalizedPaths));
 }
 
 /**
@@ -73,7 +74,7 @@ function group(paths: string[]): Bundle[] {
       posts.push({ title, images });
     }
 
-    result.push({ flagshipDetail: flagshipDetail, posts: posts });
+    result.push({ flagshipDetail, posts });
   }
 
   return result;

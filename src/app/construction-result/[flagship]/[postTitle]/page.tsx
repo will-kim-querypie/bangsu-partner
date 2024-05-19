@@ -10,13 +10,14 @@ export default function ConstructionResultDetailPage({
 }: {
   params: { flagship: Flagship; postTitle: string };
 }) {
-  const { images } = getPostDetail(params.flagship, params.postTitle);
+  const postTitle = decodeURIComponent(params.postTitle);
+  const { images } = getPostDetail(params.flagship, postTitle);
   const backUrl = `/construction-result/${params.flagship}`;
 
   return (
     <main>
       <div className={styles.header}>
-        <Title backUrl={backUrl} content={decodeURIComponent(params.postTitle)} />
+        <Title backUrl={backUrl} content={postTitle} />
       </div>
 
       <ImageGallery images={images} />
