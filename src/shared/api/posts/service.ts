@@ -1,5 +1,5 @@
-import fs from 'fs';
 import { glob } from 'glob';
+import sortPaths from './sort-paths';
 import { Flagship, FLAGSHIP_DETAILS, FlagshipDetail, isFlagship } from '../../config/flagship';
 
 const DIRNAME = `${process.cwd()}/public/flagships`;
@@ -22,32 +22,10 @@ export type Bundle = {
   posts: Post[]; // can be empty
 };
 
-// export async function get(flagship: Flagship): Promise<Bundle> {
-//   const paths = await glob(`${DIRNAME}/${flagship}/**/*.{${IMAGE_EXTENSIONS.join(',')}}`);
-//
-//   return group(sortByNewest(paths)).find(bundle => bundle.flagshipDetail.key === flagship) as Bundle;
-// }
-
-export async function getAll(): Promise<Bundle[]> {
+export async function getAll() {
   const paths = await glob(`${DIRNAME}/**/*.{${IMAGE_EXTENSIONS.join(',')}}`);
 
-  return group(sortByNewest(paths));
-}
-
-// export async function isValidPostTitle(flagship: Flagship, postTitle: string): Promise<boolean> {
-//   const paths = await glob(`${DIRNAME}/${flagship}/${postTitle}/*.{${IMAGE_EXTENSIONS.join(',')}}`);
-//
-//   return paths.length > 0;
-// }
-
-function sortByNewest(paths: string[]): string[] {
-  return paths
-    .map(name => ({ name, ctime: fs.statSync(name).ctime }))
-    .sort((a, b) => +getDay(b.ctime) - +getDay(a.ctime) /* 년월일만 비교 */)
-    .map(({ name }) => name);
-}
-function getDay(date: Date) {
-  return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  return group(sortPaths(paths));
 }
 
 /**
@@ -55,10 +33,11 @@ function getDay(date: Date) {
  */
 function group(paths: string[]): Bundle[] {
   const result: Bundle[] = [];
-  const dict = Object.values(Flagship).reduce((acc, flagship) => {
-    acc[flagship] = {};
-    return acc;
-  }, {} as Record<Flagship, Record<Post['title'], Image[]>>);
+  const dict = new Map<Flagship, Map<Post['title'], Image[]>>();
+
+  Object.values(Flagship).forEach(flagship => {
+    dict.set(flagship, new Map<Post['title'], Image[]>());
+  });
 
   for (const path of paths) {
     const { flagship, postTitle, imageName } = dividePath(path);
@@ -67,21 +46,30 @@ function group(paths: string[]): Bundle[] {
       continue;
     }
 
-    if (!dict[flagship][postTitle]) {
-      dict[flagship][postTitle] = [];
+    const postImages = dict.get(flagship);
+    if (!postImages) {
+      continue;
     }
-    const image = imageFactory(path, postTitle, imageName);
-    dict[flagship][postTitle].push(image);
+
+    if (!postImages.has(postTitle)) {
+      postImages.set(postTitle, []);
+    }
+
+    const images = postImages.get(postTitle);
+    if (images) {
+      const image = imageFactory(path, postTitle, imageName);
+      images.push(image);
+    }
   }
 
-  for (const [flagship, postImagesDict] of Object.entries(dict)) {
+  for (const [flagship, postImagesDict] of dict.entries()) {
     const flagshipDetail = FLAGSHIP_DETAILS.find(detail => detail.key === flagship);
     if (!flagshipDetail) {
       continue;
     }
 
     const posts: Post[] = [];
-    for (const [title, images] of Object.entries(postImagesDict)) {
+    for (const [title, images] of postImagesDict.entries()) {
       posts.push({ title, images });
     }
 
