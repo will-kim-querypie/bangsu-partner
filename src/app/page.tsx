@@ -15,7 +15,7 @@ export default function HomePage() {
           <h1 className={styles.heroTitle}>
             <span>고객을 위한</span>
             <span className={styles.heroTitleAuto}>
-              <AutoTypo words={['최상의 서비스', '최선의 선택']} />
+              <AutoTypo words={['무료견적 서비스', '최선의 선택']} />
             </span>
           </h1>
 
@@ -25,7 +25,7 @@ export default function HomePage() {
           <Typography type="detail1" className={styles.heroDescription}>
             엘코엘시즈가 고객님들께 드리는 약속입니다.
             <br />
-            엘코엘시즈의 프리미엄 서비스로 고객님들의 신용과 재산을 지켜드리겠습니다.
+            엘코엘시즈의 프리미엄 서비스로 고객님들의 공간을 안전하고 쾌적하게 만들어 드리겠습니다.
           </Typography>
         </div>
       </div>
