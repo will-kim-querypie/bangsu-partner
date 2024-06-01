@@ -21,6 +21,11 @@
   --gray-700: #3b3f44;
   --gray-800: #23262a;
   --gray-900: #070e13;
+
+  --kakaotalk-yellow: #fae100;
+  --kakaotalk-brown: #371d1e;
+  --naver-green: #2cb24a;
+  --naver-white: #f1f1f2;
 }
 :root {
   --padding-x: 16px;
