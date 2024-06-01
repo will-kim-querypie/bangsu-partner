@@ -7,6 +7,7 @@ import { COMPANY_NAME } from '@/shared/config/company';
 import { Breadcrumb } from '@/shared/ui/breadcrumb';
 import { FNB } from '@/shared/ui/fnb';
 import { GNB } from '@/shared/ui/gnb';
+import { QuickMenu } from '@/shared/ui/quick-menu';
 import { SubPageHero } from '@/shared/ui/sub-page-hero';
 
 export const metadata: Metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         {children}
 
         <FNB />
+        <QuickMenu />
       </body>
     </html>
   );
