@@ -6,7 +6,7 @@ import { Disclosure } from '@headlessui/react';
 import { Input } from '@/shared/ui/input';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
-import { qnaList } from './qna';
+import { qnaList } from './qna-list';
 
 export default function QuestionPage() {
   const [search, setSearch] = useState('');
