@@ -1,5 +1,5 @@
 export const CEO = '김상남';
-export const COMPANY_NAME = '엘코엘시즈(주)';
+export const COMPANY_NAME = '방수파트너';
 export const PHONE = '010-2772-1833';
 export const EMAIL = 'ellcoell2021@naver.com';
 export const BUSINESS_NUMBER = '753-81-01927'; // 사업자번호

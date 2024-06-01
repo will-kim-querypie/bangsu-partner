@@ -1,4 +1,4 @@
-import { CEO } from '@/shared/config/company';
+import { CEO, COMPANY_NAME } from '@/shared/config/company';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
 
@@ -20,15 +20,15 @@ export default function GreetingsPage() {
           </Typography>
 
           <Typography type="detail1" as="p">
-            이런 환경 속에서, 저희 엘코엘시즈는 방수 시공 전문업체로서 첨단 방수 기술과 풍부한 시공 경험을 바탕으로
+            이런 환경 속에서, 저희 {COMPANY_NAME}는 방수 시공 전문업체로서 첨단 방수 기술과 풍부한 시공 경험을 바탕으로
             고객의 다양한 요구를 충족시킬 수 있습니다. 저희는 최고 수준의 방수 솔루션을 제공하여 건물의 가치를 높이며,
             장기적인 안전과 편안함을 보장합니다.
           </Typography>
 
           <Typography type="detail1" as="p">
-            엘코엘시즈의 모든 직원은 고객의 만족을 최우선으로 하고, 안전과 신뢰를 바탕으로 정확하고 효율적인 방수 시공을
-            수행함으로써 고객과의 신뢰를 지속적으로 쌓아가는 것을 목표로 하고 있습니다. 고객 여러분의 소중한 공간을
-            보호하고 가치를 높이는 데 최선을 다하겠습니다.
+            {COMPANY_NAME}의 모든 직원은 고객의 만족을 최우선으로 하고, 안전과 신뢰를 바탕으로 정확하고 효율적인 방수
+            시공을 수행함으로써 고객과의 신뢰를 지속적으로 쌓아가는 것을 목표로 하고 있습니다. 고객 여러분의 소중한
+            공간을 보호하고 가치를 높이는 데 최선을 다하겠습니다.
           </Typography>
 
           <Typography type="detail1" as="p">

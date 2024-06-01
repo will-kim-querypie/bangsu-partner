@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import clsx from 'clsx';
 import { getNewestPostList } from '@/shared/api/posts/controller';
+import { COMPANY_NAME } from '@/shared/config/company';
 import { AutoTypo } from '@/shared/ui/auto-typo';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
@@ -23,9 +24,9 @@ export default function HomePage() {
             안전공사! 품질공사! 책임공사!
           </Typography>
           <Typography type="detail1" className={styles.heroDescription}>
-            엘코엘시즈가 고객님들께 드리는 약속입니다.
+            {COMPANY_NAME}가 고객님들께 드리는 약속입니다.
             <br />
-            엘코엘시즈의 프리미엄 서비스로 고객님들의 공간을 안전하고 쾌적하게 만들어 드리겠습니다.
+            {COMPANY_NAME}의 프리미엄 서비스로 고객님들의 공간을 안전하고 쾌적하게 만들어 드리겠습니다.
           </Typography>
         </div>
       </div>
