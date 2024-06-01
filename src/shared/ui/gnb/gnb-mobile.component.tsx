@@ -19,7 +19,7 @@ export default function GNBMobile() {
       </div>
 
       <Link href="/" className={styles.logo}>
-        <Logo width={160} />
+        <Logo width={120} />
       </Link>
 
       <GnbMobileMenu />

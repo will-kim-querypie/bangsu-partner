@@ -17,7 +17,7 @@ export default function FNB() {
     <footer className={styles.container}>
       <div className={clsx('width-limit', styles.innerContainer)}>
         <div className={styles.logoWrap}>
-          <Logo width={140} />
+          <Logo width={120} />
         </div>
 
         <div className={styles.content}>

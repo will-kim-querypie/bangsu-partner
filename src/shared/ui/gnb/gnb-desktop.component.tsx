@@ -7,7 +7,7 @@ export default function GNBDesktop() {
   return (
     <nav className={styles.container}>
       <Link href="/" className={styles.logo}>
-        <Logo width={200} />
+        <Logo width={160} />
       </Link>
 
       <GNBDesktopMenu />
