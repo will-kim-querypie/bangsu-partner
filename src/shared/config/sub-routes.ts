@@ -34,6 +34,16 @@ const subRoutes: SubRoute[] = [
   {
     path: 'customer',
     label: '고객센터',
+    children: [
+      {
+        path: 'check',
+        label: '빠른견적문의',
+      },
+      {
+        path: 'question',
+        label: '자주묻는질문',
+      },
+    ],
   },
 ];
 
