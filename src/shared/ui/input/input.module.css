@@ -1,0 +1,28 @@
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--gray-0);
+  color: var(--text-default);
+  padding: 8px 12px;
+}
+.inputWrapper.disabled {
+  color: var(--disabled-color);
+  background-color: var(--disabled-bg);
+}
+.inputWrapper:hover {
+  border-color: var(--hover-color);
+}
+.inputWrapper:focus-within {
+  border-color: var(--active-color);
+}
+
+.input {
+  border: none;
+  outline: none;
+  color: inherit;
+  background: inherit;
+  font-size: 1em;
+}
