@@ -1,15 +1,3 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em 0;
-}
-
-.count {
-  color: var(--secondary-color);
-  font-weight: bold;
-}
-
 .list {
   display: flex;
   flex-direction: column;

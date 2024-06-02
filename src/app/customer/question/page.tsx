@@ -1,10 +1,10 @@
 'use client';
 
-import { ChangeEventHandler, useState } from 'react';
-import { CaretDownFill, Search } from 'react-bootstrap-icons';
+import { useState } from 'react';
+import { CaretDownFill } from 'react-bootstrap-icons';
 import { Disclosure } from '@headlessui/react';
 import wrapByTag from '@/shared/lib/wrap-by-tag';
-import { Input } from '@/shared/ui/input';
+import { Search } from '@/shared/ui/search';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
 import { qnaList } from './qna-list';
@@ -20,10 +20,6 @@ export default function QuestionPage() {
     });
   })();
 
-  const handleChangeSearch: ChangeEventHandler<HTMLInputElement> = e => {
-    setSearch(e.target.value);
-  };
-
   const highlightSearchPhrase = (text: string) => {
     if (!search) return text;
 
@@ -38,20 +34,8 @@ export default function QuestionPage() {
 
   return (
     <main>
-      <header className={styles.header}>
-        <Typography type="detail1">
-          전체 <b className={styles.count}>{filteredQnaList.length}</b>건
-        </Typography>
-        <div className={styles.search}>
-          <Input
-            value={search}
-            onChange={handleChangeSearch}
-            className={styles.searchInput}
-            placeholder="검색어를 입력해주세요"
-            suffix={<Search />}
-          />
-        </div>
-      </header>
+      <Search resultLength={filteredQnaList.length} onChange={setSearch} />
+
       <div className={styles.list}>
         {filteredQnaList.map(({ question, answer }) => {
           const highlightedQuestion = highlightSearchPhrase(question);
