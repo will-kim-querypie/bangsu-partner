@@ -24,18 +24,20 @@ type PostListDto = {
   flagship: Flagship;
   posts: PostPreview[];
 };
-export function getPostList(flagship: string): PostListDto {
+export function getPostList(flagship: string, limit?: number): PostListDto {
   if (!isFlagship(flagship)) {
     throw new Error('Unknown flagship');
   }
 
   const bundle = cached.find(bundle => bundle.flagship === flagship) as PostsService.Bundle;
+  const allPosts = bundle.posts.map(post => ({
+    title: post.title,
+    firstImage: post.images[0],
+  }));
+
   return {
     flagship: bundle.flagship,
-    posts: bundle.posts.map(post => ({
-      title: post.title,
-      firstImage: post.images[0],
-    })),
+    posts: limit ? allPosts.slice(0, limit) : allPosts,
   };
 }
 
@@ -49,6 +51,7 @@ export function getPostDetail(flagship: string, postTitle: string): PostDetailDt
   }
 
   const bundle = cached.find(bundle => bundle.flagship === flagship) as PostsService.Bundle;
+
   return {
     flagship: bundle.flagship,
     images: bundle.posts.find(post => post.title === postTitle)?.images ?? [],

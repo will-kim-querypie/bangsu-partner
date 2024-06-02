@@ -1,6 +1,11 @@
+import Link from 'next/link';
+import { Plus } from 'react-bootstrap-icons';
 import clsx from 'clsx';
 import { viewModelDict } from '@/app/construction-flagship/[flagship]/view-model';
+import { getPostList } from '@/shared/api/posts/controller';
 import { Flagship, FLAGSHIP_LABEL_DICT } from '@/shared/config/flagship';
+import { Button } from '@/shared/ui/button';
+import { ConstructionResultCards } from '@/shared/ui/construction-result-cards';
 import { Empty } from '@/shared/ui/empty';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
@@ -13,6 +18,7 @@ const enum SectionId {
 export default function ConstructionResultPage({ params }: { params: { flagship: Flagship } }) {
   const info = viewModelDict[params.flagship];
   const label = FLAGSHIP_LABEL_DICT[params.flagship];
+  const { posts } = getPostList(params.flagship, 6);
 
   if (!info.description) {
     return (
@@ -115,6 +121,46 @@ export default function ConstructionResultPage({ params }: { params: { flagship:
                 </ul>
               </div>
             ))}
+          </div>
+        </section>
+      )}
+
+      {!!posts.length && (
+        <section className={styles.section}>
+          <div className="width-limit">
+            <header
+              className={clsx(styles.sectionHeader, styles.sectionHeaderCenter)}
+              id={SectionId.ConstructionSequence}
+            >
+              <Typography type="title1" as="h2" className={styles.sectionHeaderTitle} overflow="breakKeep">
+                성공적인 시공사례
+              </Typography>
+              <Typography type="title2" as="p" className={styles.sectionHeaderSubTitle} overflow="breakKeep">
+                방수파트너를 만나 달라진 최상의 결과를 확인해보세요!
+              </Typography>
+            </header>
+
+            <ConstructionResultCards
+              cards={posts.map(post => ({
+                href: `/construction-result/${params.flagship}/${post.title}`,
+                imageSrc: post.firstImage.src,
+                title: post.title,
+              }))}
+            />
+
+            <Link href={`/construction-result/${params.flagship}`}>
+              <Button
+                className={styles.seeAllButton}
+                icon={<Plus />}
+                size="lg"
+                iconPlacement="right"
+                variant="outline"
+                color="secondary"
+                typo="caption1"
+              >
+                전체보기
+              </Button>
+            </Link>
           </div>
         </section>
       )}

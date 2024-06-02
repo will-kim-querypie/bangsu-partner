@@ -4,7 +4,7 @@
   height: max-content;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
   border-radius: 4px;
   white-space: nowrap;
   cursor: pointer;
@@ -50,12 +50,12 @@
   height: 16px;
 }
 .lg svg {
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 }
 .xl svg {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
 }
 
 /* Color and Variant specific styles */
@@ -65,7 +65,7 @@
 }
 .fill.secondary {
   color: var(--text-white);
-  background-color: var(--secondary-color);
+  background-color: var(--text-secondary);
 }
 .outline {
   border: 1px solid;
@@ -76,7 +76,7 @@
 }
 .outline.secondary {
   color: var(--text-default);
-  border-color: var(--secondary-color);
+  border-color: var(--text-secondary);
 }
 
 .transparent {

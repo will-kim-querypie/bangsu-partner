@@ -45,7 +45,7 @@
 .sectionHeaderSubTitle {
 }
 .sectionHeaderCaption {
-  margin-top: 20px;
+  margin-top: 16px;
   color: var(--text-secondary);
 }
 
@@ -136,4 +136,10 @@
   background: var(--bg-color);
   border-radius: var(--border-radius);
   box-shadow: var(--card-box-shadow);
+}
+
+.seeAllButton {
+  width: 300px;
+  max-width: 100%;
+  margin: 0 auto;
 }
