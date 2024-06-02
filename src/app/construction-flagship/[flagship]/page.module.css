@@ -118,8 +118,8 @@
   border: 1px solid var(--secondary-color);
   border-top: 5px solid var(--secondary-color);
   background: var(--bg-color);
-  margin: 32px 0 28px;
-  padding: 20px 0;
+  margin: 40px 0 28px;
+  padding: 12px 0;
 }
 .typesHeader b {
   font-weight: bold;
@@ -133,7 +133,6 @@
   grid-auto-rows: 240px;
   grid-auto-flow: row dense;
   gap: 28px 20px;
-  margin-top: 24px;
 }
 .typesItem {
   background: var(--bg-color);
