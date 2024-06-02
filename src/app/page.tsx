@@ -47,7 +47,7 @@ export default function HomePage() {
               }}
             >
               <div className={clsx(styles.overlay, styles.previewCardOverlay)}>
-                <Typography type="body2" className={styles.preivewCardLabel}>
+                <Typography type="body2" className={styles.previewCardLabel}>
                   {FLAGSHIP_LABEL_DICT[flagship]}
                 </Typography>
               </div>

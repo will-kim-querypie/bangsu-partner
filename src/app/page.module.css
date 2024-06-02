@@ -90,11 +90,11 @@
   border-radius: inherit;
 }
 
-.preivewCardLabel {
+.previewCardLabel {
   position: relative;
   width: max-content;
 }
-.previewCard:hover .preivewCardLabel:after {
+.previewCard:hover .previewCardLabel:after {
   content: '';
   position: absolute;
   top: calc(50% + 1.4em);
