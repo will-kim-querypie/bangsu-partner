@@ -26,3 +26,7 @@
 .square:not(:last-of-type) {
   border-bottom: 1px solid var(--border-color);
 }
+.square[role='presentation'] {
+  pointer-events: none;
+  user-select: none;
+}
