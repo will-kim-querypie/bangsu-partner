@@ -2,7 +2,7 @@ import { glob } from 'glob';
 import sortPaths from './sort-paths';
 import { Flagship, isFlagship } from '../../config/flagship';
 
-const DIRNAME = `${process.cwd()}/public/flagships`;
+const DIRNAME = `${process.cwd()}/public/construction-result`;
 const IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'jfif', 'png', 'webp', 'bmp'];
 const IMAGE_EXTENSIONS_MAP = IMAGE_EXTENSIONS.reduce(
   (acc, ext) => ({ ...acc, [ext]: true }),
