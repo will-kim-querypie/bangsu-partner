@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { ChangeEventHandler, useState } from 'react';
 import { CaretDownFill, Search } from 'react-bootstrap-icons';
 import { Disclosure } from '@headlessui/react';
 import { Input } from '@/shared/ui/input';
@@ -19,6 +19,10 @@ export default function QuestionPage() {
     });
   })();
 
+  const handleChangeSearch: ChangeEventHandler<HTMLInputElement> = e => {
+    setSearch(e.target.value);
+  };
+
   return (
     <main>
       <header className={styles.header}>
@@ -28,7 +32,7 @@ export default function QuestionPage() {
         <div className={styles.search}>
           <Input
             value={search}
-            onChange={e => setSearch(e.target.value)}
+            onChange={handleChangeSearch}
             className={styles.searchInput}
             placeholder="검색어를 입력해주세요"
             suffix={<Search />}
