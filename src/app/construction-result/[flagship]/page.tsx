@@ -1,7 +1,9 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { Search as SearchIcon } from 'react-bootstrap-icons';
 import { getPostList } from '@/shared/api/posts/controller';
 import { Flagship } from '@/shared/config/flagship';
 import { Empty } from '@/shared/ui/empty';
@@ -36,18 +38,42 @@ export default function ConstructionResultPage({ params }: { params: { flagship:
       {!!filteredPosts.length && (
         <ul className={styles.posts}>
           {filteredPosts.map(post => (
-            <li
-              key={post.title}
-              role="button"
-              className={styles.post}
-              style={{
-                background: `url(${post.firstImage.src}) no-repeat center/cover`,
-              }}
-            >
-              <Link href={`/construction-result/${params.flagship}/${post.title}`} className={styles.postTitleWrap}>
-                <Typography type="detail1" className={styles.postTitle}>
-                  {post.title}
-                </Typography>
+            <li key={post.title} className={styles.post}>
+              <Link href={`/construction-result/${params.flagship}/${post.title}`} className={styles.postLink}>
+                <div className={styles.processRateFloatTag}>
+                  <Typography type="caption3">공정률 100%</Typography>
+                </div>
+
+                <div className={styles.postImageWrap}>
+                  <Image
+                    src={post.firstImage.src}
+                    alt="construction-result-preview"
+                    fill
+                    sizes="320px"
+                    loading="lazy"
+                    style={{ objectFit: 'cover', objectPosition: 'center' }}
+                    className={styles.postImage}
+                  />
+                  <div className={styles.postImageOverWrap}>
+                    <Typography type="detail1">{post.title}</Typography>
+                    <SearchIcon />
+                  </div>
+                </div>
+
+                <div className={styles.postContent}>
+                  <Typography type="body3" overflow="ellipsis">
+                    {post.title}
+                  </Typography>
+
+                  <div className={styles.processRate}>
+                    <Typography type="caption2" className={styles.processRateLabel}>
+                      공정률
+                    </Typography>
+                    <Typography type="caption3" className={styles.processRateBar}>
+                      100%
+                    </Typography>
+                  </div>
+                </div>
               </Link>
             </li>
           ))}
