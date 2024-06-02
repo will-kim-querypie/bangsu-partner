@@ -3425,26 +3425,7 @@ export const cached = [
       description:
         '방수하면서 단열도 되는 방식으로 유럽에서 보편적으로 시행되고 있는 방수 방법입니다. 여러 단계의 공법을 거치며 물의 배수를 용이하게 하고, 여분의 수분도 증발, 외부 온도 변화로 부터 보호를 합니다. 마지막 쇄석 작업은 낮에 뜨거운 열기를 흡수하고 밤에는 열을 식혀주는 중요한 역할을 합니다.',
     },
-    posts: [
-      {
-        title: 'test2',
-        images: [
-          { src: '/flagships/reverse-roof-waterproofing/test2/10.jpg', alt: 'test2-10.jpg' },
-          { src: '/flagships/reverse-roof-waterproofing/test2/8.jpg', alt: 'test2-8.jpg' },
-        ],
-      },
-    ],
+    posts: [],
   },
-  {
-    flagshipDetail: { key: 'other-work', label: '기타공사', description: '' },
-    posts: [
-      {
-        title: 'test1',
-        images: [
-          { src: '/flagships/other-work/test1/2.jpg', alt: 'test1-2.jpg' },
-          { src: '/flagships/other-work/test1/5.jpg', alt: 'test1-5.jpg' },
-        ],
-      },
-    ],
-  },
+  { flagshipDetail: { key: 'other-work', label: '기타공사', description: '' }, posts: [] },
 ] as Awaited<ReturnType<typeof getAll>>; // assert enum (Flagship);

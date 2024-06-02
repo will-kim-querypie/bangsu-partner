@@ -1,12 +1,20 @@
 import Link from 'next/link';
 import { getPostList } from '@/shared/api/posts/controller';
 import { Flagship } from '@/shared/config/flagship';
+import { Empty } from '@/shared/ui/empty';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
 
 export default function ConstructionResultPage({ params }: { params: { flagship: Flagship } }) {
   const { posts } = getPostList(params.flagship);
 
+  if (!posts.length) {
+    return (
+      <main>
+        <Empty />
+      </main>
+    );
+  }
   return (
     <main>
       <ul className={styles.posts}>
