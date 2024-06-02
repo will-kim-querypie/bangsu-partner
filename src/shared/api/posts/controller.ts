@@ -23,6 +23,7 @@ export function getNewestPostList(): NewestPostListDto {
 type PostListDto = {
   flagship: Flagship;
   posts: PostPreview[];
+  allPostsLength: number; // limit을 부여한 상태에서 전체 길이를 알고 싶을 때 사용합니다.
 };
 export function getPostList(flagship: string, limit?: number): PostListDto {
   if (!isFlagship(flagship)) {
@@ -38,6 +39,7 @@ export function getPostList(flagship: string, limit?: number): PostListDto {
   return {
     flagship: bundle.flagship,
     posts: limit ? allPosts.slice(0, limit) : allPosts,
+    allPostsLength: allPosts.length,
   };
 }
 

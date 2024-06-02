@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Plus } from 'react-bootstrap-icons';
 import clsx from 'clsx';
+import { howToUseSteps } from '@/app/construction-flagship/[flagship]/how-to-use';
 import { viewModelDict } from '@/app/construction-flagship/[flagship]/view-model';
 import { getPostList } from '@/shared/api/posts/controller';
 import { Flagship, FLAGSHIP_LABEL_DICT } from '@/shared/config/flagship';
@@ -15,10 +16,12 @@ const enum SectionId {
   ConstructionSequence = 'construction-sequence',
 }
 
+const POSTS_LIMIT = 6;
+
 export default function ConstructionResultPage({ params }: { params: { flagship: Flagship } }) {
   const info = viewModelDict[params.flagship];
   const label = FLAGSHIP_LABEL_DICT[params.flagship];
-  const { posts } = getPostList(params.flagship, 6);
+  const { posts, allPostsLength } = getPostList(params.flagship, POSTS_LIMIT);
 
   if (!info.description) {
     return (
@@ -148,22 +151,60 @@ export default function ConstructionResultPage({ params }: { params: { flagship:
               }))}
             />
 
-            <Link href={`/construction-result/${params.flagship}`}>
-              <Button
-                className={styles.seeAllButton}
-                icon={<Plus />}
-                size="lg"
-                iconPlacement="right"
-                variant="outline"
-                color="secondary"
-                typo="caption1"
-              >
-                전체보기
-              </Button>
-            </Link>
+            {allPostsLength > POSTS_LIMIT && (
+              <Link href={`/construction-result/${params.flagship}`}>
+                <Button
+                  className={styles.seeAllButton}
+                  icon={<Plus />}
+                  size="lg"
+                  iconPlacement="right"
+                  variant="outline"
+                  color="secondary"
+                  typo="caption1"
+                >
+                  전체보기
+                </Button>
+              </Link>
+            )}
           </div>
         </section>
       )}
+
+      <section className={clsx(styles.section, styles.sectionSecondaryBG)}>
+        <div className="width-limit">
+          <header
+            className={clsx(styles.sectionHeader, styles.sectionHeaderCenter)}
+            id={SectionId.ConstructionSequence}
+          >
+            <Typography type="title1" as="h2" className={styles.sectionHeaderTitle} overflow="breakKeep">
+              처음이세요? 이용방법안내
+            </Typography>
+            <Typography type="title2" as="p" className={styles.sectionHeaderSubTitle} overflow="breakKeep">
+              전국 어디서나 무료방문 견적 및 시공을 받을 수 있습니다.
+            </Typography>
+            <Typography type="caption1" className={styles.sectionHeaderCaption}>
+              방문하여 공사비와 기간을 줄이는 최선의 해결책을 드립니다.
+            </Typography>
+          </header>
+
+          <ol className={styles.howToUseSteps}>
+            {howToUseSteps.map((item, index) => (
+              <li key={item.name} className={styles.howToUseStep}>
+                <div className={styles.howToUseStepCircle}>
+                  <Typography type="caption1" className={styles.howToUseStepNum}>
+                    step {formatOrder(index)}
+                  </Typography>
+                  {item.icon}
+                  <Typography type="body3">{item.name}</Typography>
+                </div>
+                <Typography type="caption1" className={styles.howToUseStepDescription}>
+                  {item.description}
+                </Typography>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
     </main>
   );
 }
