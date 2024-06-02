@@ -54,8 +54,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 1.8em;
-  height: 1.8em;
+  min-width: 1.8em;
+  min-height: 1.8em;
   border-radius: 50%;
   border: 1px solid currentColor;
 }
@@ -66,4 +66,9 @@
 .disclosurePanel .qaCircle {
   background: var(--hover-color);
   color: var(--text-white);
+}
+
+.highlight {
+  font-weight: bold;
+  color: var(--primary-color);
 }
