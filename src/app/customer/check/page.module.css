@@ -45,7 +45,7 @@
   font-size: 1.2rem;
 }
 .cardLink.cardLinkPhone {
-  border-left: 5px solid var(--primary-color);
+  border-left: 5px solid var(--hover-color);
   border-top: 1px solid var(--border-color);
 }
 .cardLink.cardLinkKakao {
@@ -58,7 +58,7 @@
 }
 .cardLink.cardLinkPhone:hover,
 .cardLink.cardLinkPhone:focus {
-  background: var(--primary-color);
+  background: var(--hover-color);
   color: var(--text-white);
 }
 .cardLink.cardLinkKakao:hover,
@@ -77,7 +77,7 @@
   }
   .cardLink.cardLinkPhone {
     border-left: 1px solid var(--border-color);
-    border-top: 5px solid var(--primary-color);
+    border-top: 5px solid var(--hover-color);
   }
   .cardLink.cardLinkKakao {
     border-left: 1px solid var(--border-color);
