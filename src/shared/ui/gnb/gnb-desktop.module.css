@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 20px;
-  padding: 0 var(--padding-x);
+  padding: 0 var(--app-padding-x);
 
   --item-width: 8.25rem;
 }

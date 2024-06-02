@@ -28,17 +28,13 @@
   --naver-white: #f1f1f2;
 }
 :root {
-  --padding-x: 16px;
-  --max-width: calc(1000px + 2 * var(--padding-x));
-  --max-width-without-padding: 1000px; /* padding-x를 고려하지 않아도 되고, border top, border bottom을 표시해야하는 컨테이너에 사용 */
-  --border-radius: 4px;
   --primary-color: var(--brand-400);
+  --primary-color-rgb: 33, 155, 254;
   --secondary-color: var(--brand-700);
   --tertiary-color: var(--brand-50);
   --bg-color: var(--gray-0);
   --bg-secondary-color: var(--gray-50);
   --bg-dimmed-color: rgba(0, 0, 0, 0.6);
-  --bg-white-color: var(--gray-0);
   --border-color: var(--gray-100);
   --text-white: var(--gray-0);
   --text-default: var(--gray-700);
@@ -51,6 +47,12 @@
   --disabled-color: var(--gray-400);
   --disabled-bg: var(--gray-100);
 
+  --app-padding-x: 16px;
+  --app-padding-y: 20px;
+  --app-max-width: calc(1000px + 2 * var(--app-padding-x));
+  --app-max-width-without-padding: 1000px; /* padding-x를 고려하지 않아도 되고, border top, border bottom을 표시해야하는 컨테이너에 사용 */
+  --border-radius: 4px;
+
   --gnb-height: 50px;
 
   --z-breadcrumb: 99;
@@ -59,7 +61,7 @@
 }
 @media screen and (min-width: 1000px) {
   :root {
-    --padding-x: 20px;
+    --app-padding-x: 20px;
     --gnb-height: 90px;
   }
 }
@@ -81,15 +83,15 @@ body {
 main {
   box-sizing: border-box;
 }
-main:not([data-home='true']) {
-  padding-top: 20px;
-  padding-bottom: 20px;
+main:not([data-landing='true']) {
+  padding-top: var(--app-padding-y);
+  padding-bottom: var(--app-padding-y);
 }
-main:not([data-home='true']),
+main:not([data-landing='true']),
 .width-limit {
   width: 100%;
-  max-width: var(--max-width);
+  max-width: var(--app-max-width);
   margin: 0 auto;
-  padding-left: var(--padding-x);
-  padding-right: var(--padding-x);
+  padding-left: var(--app-padding-x);
+  padding-right: var(--app-padding-x);
 }

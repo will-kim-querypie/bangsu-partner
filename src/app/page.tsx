@@ -11,7 +11,7 @@ export default function HomePage() {
   const posts = getNewestPostList();
 
   return (
-    <main data-home="true" className={styles.container}>
+    <main data-landing="true" className={styles.container}>
       <div className={styles.hero}>
         <div className={clsx(styles.overlay, styles.heroOverlay)}>
           <h1 className={styles.heroTitle}>

@@ -82,18 +82,15 @@
   text-overflow: ellipsis;
 }
 
-.break-words {
+.breakWords {
   word-break: break-word;
 }
-
-.break-all {
+.breakAll {
   word-break: break-all;
 }
-
-.break-normal {
+.breakNormal {
   word-break: normal;
 }
-
-.break-keep {
+.breakKeep {
   word-break: keep-all;
 }

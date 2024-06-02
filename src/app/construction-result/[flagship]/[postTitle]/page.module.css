@@ -12,6 +12,6 @@
 
 .image {
   position: relative;
-  width: calc(var(--max-width) * 0.4);
+  width: calc(var(--app-max-width) * 0.4);
   max-width: 100%;
 }

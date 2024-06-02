@@ -65,7 +65,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {loading ? <Loading /> : iconPlacement === 'left' && icon}
         {children && (
-          <Typography type={typo} overflow="break-normal">
+          <Typography type={typo} overflow="breakNormal">
             {children}
           </Typography>
         )}

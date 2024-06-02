@@ -16,7 +16,7 @@ export default function Title({ backUrl, content }: TitleProps) {
 
   return (
     <>
-      <Typography className={styles.textTitle} type="title2" overflow="break-words">
+      <Typography className={styles.textTitle} type="title2" overflow="breakWords">
         {content}
       </Typography>
 

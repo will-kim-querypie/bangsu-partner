@@ -12,7 +12,7 @@ export type TypographyType =
   | 'detail2'
   | 'caption1'
   | 'caption2';
-type TypographyOverflow = 'ellipsis' | 'break-words' | 'break-all' | 'break-normal' | 'break-keep';
+type TypographyOverflow = 'ellipsis' | 'breakWords' | 'breakAll' | 'breakNormal' | 'breakKeep';
 
 type TypographyProps = HTMLAttributes<HTMLElement> & {
   children?: ReactNode;

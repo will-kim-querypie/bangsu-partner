@@ -25,7 +25,7 @@
   color: var(--text-white);
 }
 .overlay.heroOverlay {
-  padding: 0 var(--padding-x);
+  padding: 0 var(--app-padding-x);
 }
 
 .heroTitle {
