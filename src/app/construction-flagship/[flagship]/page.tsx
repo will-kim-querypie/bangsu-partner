@@ -36,7 +36,7 @@ export default function ConstructionResultPage({ params }: { params: { flagship:
       </section>
 
       {info.constructionSequence && (
-        <section className={styles.section}>
+        <section className={clsx(styles.section, styles.sectionSecondaryBG)}>
           <div className="width-limit">
             <header
               className={clsx(styles.sectionHeader, styles.sectionHeaderCenter)}
@@ -77,7 +77,7 @@ export default function ConstructionResultPage({ params }: { params: { flagship:
       )}
 
       {info.constructionTypes && (
-        <section className={styles.section}>
+        <section className={clsx(styles.section, styles.sectionSecondaryBG)}>
           <div className="width-limit">
             <header
               className={clsx(styles.sectionHeader, styles.sectionHeaderCenter)}

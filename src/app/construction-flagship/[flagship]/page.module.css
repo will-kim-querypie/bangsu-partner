@@ -6,7 +6,7 @@
   font-weight: bold;
 }
 
-.section:nth-last-of-type(odd):not(:only-of-type) {
+.section.sectionSecondaryBG {
   background-color: var(--bg-secondary-color);
 }
 
