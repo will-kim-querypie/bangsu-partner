@@ -8,7 +8,7 @@
 }
 @media screen and (min-width: 1000px) {
   .posts {
-    padding: 2em 0;
+    padding-bottom: 2em;
   }
 }
 
