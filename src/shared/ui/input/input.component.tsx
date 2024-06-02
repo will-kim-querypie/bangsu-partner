@@ -12,7 +12,7 @@ type InputProps = {
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ className, disabled = false, onChange, prefix, suffix, ...rest }, ref) => {
     const inputRef = useRef<HTMLInputElement>(null);
-    const combinedref = combineRef([ref, inputRef]);
+    const combinedRef = combineRef([ref, inputRef]);
 
     return (
       <span
@@ -23,7 +23,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
       >
         {prefix}
         <input
-          ref={combinedref}
+          ref={combinedRef}
           disabled={disabled}
           className={clsx(styles.input, className)}
           onChange={onChange}
