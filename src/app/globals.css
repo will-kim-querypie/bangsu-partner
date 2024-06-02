@@ -38,6 +38,7 @@
   --bg-color: var(--gray-0);
   --bg-secondary-color: var(--gray-50);
   --bg-dimmed-color: rgba(0, 0, 0, 0.6);
+  --bg-white-color: var(--gray-0);
   --border-color: var(--gray-100);
   --text-white: var(--gray-0);
   --text-default: var(--gray-700);
@@ -61,6 +62,11 @@
     --padding-x: 20px;
     --gnb-height: 90px;
   }
+}
+
+::selection {
+  background: var(--secondary-color);
+  color: var(--text-white);
 }
 
 body {

@@ -40,7 +40,8 @@
   font-size: 1.1rem;
   transition: background 0.2s, color 0.2s, font-size 0.2s;
 }
-.cardLink:hover {
+.cardLink:hover,
+.cardLink:focus {
   font-size: 1.2rem;
 }
 .cardLink.cardLinkPhone {
@@ -55,15 +56,18 @@
   border-left: 5px solid var(--naver-green);
   border-top: 1px solid var(--border-color);
 }
-.cardLink.cardLinkPhone:hover {
+.cardLink.cardLinkPhone:hover,
+.cardLink.cardLinkPhone:focus {
   background: var(--primary-color);
   color: var(--text-white);
 }
-.cardLink.cardLinkKakao:hover {
+.cardLink.cardLinkKakao:hover,
+.cardLink.cardLinkKakao:focus {
   background: var(--kakaotalk-yellow);
   color: var(--kakaotalk-brown);
 }
-.cardLink.cardLinkNaverForm:hover {
+.cardLink.cardLinkNaverForm:hover,
+.cardLink.cardLinkNaverForm:focus {
   background: var(--naver-green);
   color: var(--naver-white);
 }
@@ -103,6 +107,7 @@
   color: var(--text-secondary);
   transition: font-size 0.2s;
 }
-.cardLink:hover .cardLinkSubText {
+.cardLink:hover .cardLinkSubText,
+.cardLink:focus .cardLinkSubText {
   color: inherit;
 }
