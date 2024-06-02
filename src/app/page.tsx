@@ -2,6 +2,7 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import { getNewestPostList } from '@/shared/api/posts/controller';
 import { COMPANY_NAME } from '@/shared/config/company';
+import { FLAGSHIP_LABEL_DICT } from '@/shared/config/flagship';
 import { AutoTypo } from '@/shared/ui/auto-typo';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
@@ -33,10 +34,10 @@ export default function HomePage() {
 
       <div className="width-limit">
         <div className={styles.previewCards}>
-          {posts.map(({ flagshipDetail, newestPost }) => (
+          {posts.map(({ flagship, newestPost }) => (
             <Link
-              key={`preview-${flagshipDetail.key}`}
-              href={`/construction-result/${flagshipDetail.key}`}
+              key={`preview-${flagship}`}
+              href={`/construction-result/${flagship}`}
               className={styles.previewCard}
               style={{
                 backgroundImage: `url(${newestPost ? newestPost.firstImage.src : '/flagship-default.jpeg'})`,
@@ -47,7 +48,7 @@ export default function HomePage() {
             >
               <div className={clsx(styles.overlay, styles.previewCardOverlay)}>
                 <Typography type="body2" className={styles.preivewCardLabel}>
-                  {flagshipDetail.label}
+                  {FLAGSHIP_LABEL_DICT[flagship]}
                 </Typography>
               </div>
             </Link>

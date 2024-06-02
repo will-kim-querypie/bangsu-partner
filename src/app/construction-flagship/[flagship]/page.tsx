@@ -1,12 +1,13 @@
-import { Flagship, FLAGSHIP_DETAILS } from '@/shared/config/flagship';
+import { flagshipInfoDict } from '@/app/construction-flagship/[flagship]/info-dict';
+import { Flagship } from '@/shared/config/flagship';
 import { Empty } from '@/shared/ui/empty';
 import { Typography } from '@/shared/ui/typography';
 import styles from './page.module.css';
 
 export default function FlagShipPage({ params }: { params: { flagship: Flagship } }) {
-  const flagShipDetail = FLAGSHIP_DETAILS.find(detail => detail.key === params.flagship);
+  const info = flagshipInfoDict[params.flagship];
 
-  if (!flagShipDetail?.description) {
+  if (!info.description) {
     return (
       <main>
         <Empty />
@@ -16,7 +17,7 @@ export default function FlagShipPage({ params }: { params: { flagship: Flagship 
   return (
     <main>
       <Typography type="detail1" className={styles.description}>
-        {flagShipDetail?.description}
+        {info.description}
       </Typography>
     </main>
   );

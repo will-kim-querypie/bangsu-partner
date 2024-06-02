@@ -1,4 +1,4 @@
-import { FLAGSHIP_DETAILS } from '@/shared/config/flagship';
+import { Flagship, FLAGSHIP_LABEL_DICT } from '@/shared/config/flagship';
 
 type SubRoute = {
   path: string;
@@ -68,10 +68,10 @@ const processToViewModel = (keyPrefix: string, routes: SubRoute[]): SubRouteView
     }
     if (parent.path.includes('[flagship]')) {
       // flagship이 포함된 path인 경우, flagship에 따라 children 생성
-      return FLAGSHIP_DETAILS.map(flagship => ({
-        key: `${keyPrefix}-child:${parent.path}-${flagship.key}`,
-        path: `/${parent.path.replace('[flagship]', flagship.key)}`,
-        label: flagship.label,
+      return Object.values(Flagship).map(flagship => ({
+        key: `${keyPrefix}-child:${parent.path}-${flagship}`,
+        path: `/${parent.path.replace('[flagship]', flagship)}`,
+        label: FLAGSHIP_LABEL_DICT[flagship],
       }));
     }
     // children이 없는 경우, parent 자체를 children으로 반환

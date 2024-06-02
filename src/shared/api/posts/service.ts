@@ -1,6 +1,6 @@
 import { glob } from 'glob';
 import sortPaths from './sort-paths';
-import { Flagship, FLAGSHIP_DETAILS, FlagshipDetail, isFlagship } from '../../config/flagship';
+import { Flagship, isFlagship } from '../../config/flagship';
 
 const DIRNAME = `${process.cwd()}/public/flagships`;
 const IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'jfif', 'png', 'webp', 'bmp'];
@@ -18,7 +18,7 @@ export type Post = {
   images: Image[]; // cannot be empty
 };
 export type Bundle = {
-  flagshipDetail: FlagshipDetail;
+  flagship: Flagship;
   posts: Post[]; // can be empty
 };
 
@@ -64,17 +64,12 @@ function group(paths: string[]): Bundle[] {
   }
 
   for (const [flagship, postImagesDict] of dict.entries()) {
-    const flagshipDetail = FLAGSHIP_DETAILS.find(detail => detail.key === flagship);
-    if (!flagshipDetail) {
-      continue;
-    }
-
     const posts: Post[] = [];
     for (const [title, images] of postImagesDict.entries()) {
       posts.push({ title, images });
     }
 
-    result.push({ flagshipDetail, posts });
+    result.push({ flagship, posts });
   }
 
   return result;
