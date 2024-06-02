@@ -17,7 +17,6 @@ export default function CheckPage() {
         <div className={styles.cards}>
           {linkList.map(({ title, description, icon, className, href }) => {
             const anchorProps: ComponentProps<'a'> = {
-              key: title,
               className: clsx(styles.cardLink, className),
               href,
             };
@@ -27,7 +26,7 @@ export default function CheckPage() {
             }
 
             return (
-              <a {...anchorProps}>
+              <a key={title} {...anchorProps}>
                 <div className={styles.cardLinkInner}>
                   {icon}
                   {title}
