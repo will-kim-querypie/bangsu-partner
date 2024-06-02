@@ -36,6 +36,7 @@
   --bg-secondary-color: var(--gray-50);
   --bg-dimmed-color: rgba(0, 0, 0, 0.6);
   --border-color: var(--gray-100);
+  --border-darken-color: var(--gray-400); /* 구분선이 명확하면 좋을 때 사용 */
   --text-white: var(--gray-0);
   --text-default: var(--gray-700);
   --text-static: var(--gray-900);

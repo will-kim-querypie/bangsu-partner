@@ -1,7 +1,6 @@
 .list {
   display: flex;
   flex-direction: column;
-  border-top: 1px solid var(--text-static);
   --list-item-padding-x: 16px;
   --list-item-padding-y: 12px;
 }

@@ -1,4 +1,6 @@
-import { Search as SearchIcon } from 'react-bootstrap-icons';
+import { useState, KeyboardEventHandler, ChangeEventHandler } from 'react';
+import { ArrowReturnLeft } from 'react-bootstrap-icons';
+import { Button } from '@/shared/ui/button';
 import { Input } from '@/shared/ui/input';
 import { Typography } from '@/shared/ui/typography';
 import styles from './search.module.css';
@@ -9,6 +11,21 @@ type SearchProps = {
 };
 
 export default function Search({ resultLength, onChange }: SearchProps) {
+  const [localValue, setLocalValue] = useState('');
+
+  const applySearch = () => {
+    onChange(localValue);
+  };
+  const handleChange: ChangeEventHandler<HTMLInputElement> = e => {
+    setLocalValue(e.target.value);
+  };
+  const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = e => {
+    if (e.key === 'Enter' && !e.nativeEvent.isComposing) {
+      e.preventDefault();
+      applySearch();
+    }
+  };
+
   return (
     <header className={styles.header}>
       <Typography type="detail1">
@@ -16,10 +33,11 @@ export default function Search({ resultLength, onChange }: SearchProps) {
       </Typography>
       <div className={styles.search}>
         <Input
-          onChange={e => onChange(e.target.value)}
+          onChange={handleChange}
+          onKeyDown={handleKeyDown}
           className={styles.searchInput}
           placeholder="검색어를 입력해주세요"
-          suffix={<SearchIcon />}
+          suffix={<Button icon={<ArrowReturnLeft />} onClick={applySearch} variant="transparent" />}
         />
       </div>
     </header>
