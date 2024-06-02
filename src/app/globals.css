@@ -59,6 +59,7 @@
 
   --z-breadcrumb: 99;
   --z-gnb: 100;
+  --z-quick-menu: 999;
   --z-drawer: 1000;
 }
 @media screen and (min-width: 1000px) {
