@@ -5,11 +5,7 @@
   grid-auto-rows: 240px;
   grid-auto-flow: row dense;
   gap: 1.66rem 1rem;
-}
-@media screen and (min-width: 1000px) {
-  .posts {
-    padding-bottom: 2em;
-  }
+  padding: 2em 0;
 }
 
 .post {
