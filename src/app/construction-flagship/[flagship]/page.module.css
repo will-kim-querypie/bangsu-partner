@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  z-index: -1; /* For z-index of `.howToUseStep:not(:first-of-type) .howToUseStepCircle::before` */
+  z-index: 0; /* For z-index of `.howToUseStep:not(:first-of-type) .howToUseStepCircle::before` */
   padding-top: 60px;
   padding-bottom: 60px;
 }
