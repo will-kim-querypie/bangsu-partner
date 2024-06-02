@@ -18,7 +18,7 @@ type TypographyProps = HTMLAttributes<HTMLElement> & {
   children?: ReactNode;
   type?: TypographyType;
   overflow?: TypographyOverflow;
-  as?: keyof Pick<JSX.IntrinsicElements, 'h1' | 'h2' | 'p' | 'span'>;
+  as?: keyof Pick<JSX.IntrinsicElements, 'h1' | 'h2' | 'p' | 'span' | 'b'>;
 };
 
 const Typography = forwardRef<HTMLParagraphElement, TypographyProps>(
@@ -27,7 +27,7 @@ const Typography = forwardRef<HTMLParagraphElement, TypographyProps>(
       className,
       children,
       type = 'detail1',
-      overflow = titleTypes.includes(type) ? 'ellipsis' : undefined,
+      overflow = titleTypes.includes(type) ? 'ellipsis' : 'breakKeep',
       title = overflow === 'ellipsis' && typeof children === 'string' ? children : undefined,
       as: El = defaultElDict[type],
       ...rest
