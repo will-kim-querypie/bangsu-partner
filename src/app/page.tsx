@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ArrowRight } from 'react-bootstrap-icons';
 import clsx from 'clsx';
 import { getNewestPostList } from '@/shared/api/posts/controller';
 import { COMPANY_NAME } from '@/shared/config/company';
@@ -35,20 +36,26 @@ export default function HomePage() {
       <div className="width-limit">
         <div className={styles.previewCards}>
           {posts.map(({ flagship, newestPost }) => (
-            <Link
-              key={`preview-${flagship}`}
-              href={`/construction-result/${flagship}`}
-              className={styles.previewCard}
-              style={{
-                backgroundImage: `url(${newestPost ? newestPost.firstImage.src : '/flagship-default.jpeg'})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundSize: 'cover',
-              }}
-            >
-              <div className={clsx(styles.overlay, styles.previewCardOverlay)}>
-                <Typography type="body2" className={styles.previewCardLabel}>
+            <Link key={`preview-${flagship}`} href={`/construction-result/${flagship}`} className={styles.previewCard}>
+              <div
+                role="presentation"
+                className={styles.previewCardImage}
+                style={{
+                  backgroundImage: `url(${newestPost ? newestPost.firstImage.src : '/flagship-default.jpeg'})`,
+                }}
+              />
+              <div className={styles.previewCardContent}>
+                <Typography type="body2" className={styles.previewCardTitle}>
                   {FLAGSHIP_LABEL_DICT[flagship]}
+                </Typography>
+                <Typography type="caption2" className={styles.previewCardSubTitle}>
+                  장마 및 태풍에도 안심하세요!
+                  <br />
+                  하자보증 최대5년! 전문건설면허업
+                </Typography>
+                <Typography type="caption3" className={styles.previewCardViewMore}>
+                  <span>view more</span>
+                  <ArrowRight strokeWidth={2} />
                 </Typography>
               </div>
             </Link>

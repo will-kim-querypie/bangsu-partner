@@ -11,7 +11,8 @@ export type TypographyType =
   | 'detail1'
   | 'detail2'
   | 'caption1'
-  | 'caption2';
+  | 'caption2'
+  | 'caption3';
 type TypographyOverflow = 'ellipsis' | 'breakWords' | 'breakAll' | 'breakNormal' | 'breakKeep';
 
 type TypographyProps = HTMLAttributes<HTMLElement> & {
@@ -52,6 +53,7 @@ const defaultElDict: Record<TypographyType, keyof Pick<JSX.IntrinsicElements, 'h
   detail2: 'p',
   caption1: 'p',
   caption2: 'p',
+  caption3: 'p',
 };
 const titleTypes: TypographyType[] = ['title1', 'title2'];
 

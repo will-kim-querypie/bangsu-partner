@@ -1,6 +1,6 @@
 .container {
   --preview-cards-padding-y: 32px;
-  --preview-card-height: 240px;
+  --preview-card-height: 320px;
 }
 
 /**
@@ -73,46 +73,72 @@
   grid-template-rows: repeat(auto-fit, minmax(var(--preview-card-height), 1fr));
   grid-auto-rows: var(--preview-card-height);
   grid-auto-flow: row dense;
-  gap: 1em;
+  column-gap: 1em;
   padding: var(--preview-cards-padding-y) 0;
 }
 
 .previewCard {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120px;
+  --hover-transition-duration: 0.2s;
+}
+.previewCardImage {
+  align-self: stretch;
+  height: 100%;
   border-radius: var(--border-radius);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-size var(--hover-transition-duration);
+}
+.previewCardContent {
+  width: 90%;
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: var(--bg-color);
+  box-shadow: var(--card-box-shadow);
+  border-radius: var(--border-radius);
+  text-align: center;
+  padding: 1.5em 1em;
+  transition: bottom var(--hover-transition-duration), background var(--hover-transition-duration),
+    color var(--hover-transition-duration);
+}
+@media screen and (min-width: 1000px) {
+  .previewCardContent {
+    width: 80%;
+  }
+}
+.previewCardTitle {
+}
+.previewCardSubTitle {
+}
+.previewCardViewMore {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  transition: color var(--hover-transition-duration);
 }
 
-.overlay.previewCardOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  border-radius: inherit;
+.previewCard:hover .previewCardContent {
+  bottom: 55px;
+  background: var(--hover-color);
+  color: var(--text-white);
 }
-
-.previewCardLabel {
-  position: relative;
-  width: max-content;
+.previewCard:hover .previewCardViewMore {
+  color: var(--text-white);
 }
-.previewCard:hover .previewCardLabel:after {
-  content: '';
-  position: absolute;
-  top: calc(50% + 1.4em);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background: currentColor;
-  will-change: width;
-  animation: stretch 0.2s forwards;
-}
-@keyframes stretch {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+.previewCard:hover .previewCardImage {
+  background-size: 110%;
 }
 
 /**
