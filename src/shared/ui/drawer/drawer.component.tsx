@@ -30,6 +30,7 @@ export default function Drawer({
   overlayClassName,
   className,
 }: DrawerProps) {
+  // TODO: 왜 overscroll-behavior: contain; 안 먹히는지 확인
   useEffect(() => {
     const updatePageScroll = () => {
       if (lockBackgroundScroll) {
