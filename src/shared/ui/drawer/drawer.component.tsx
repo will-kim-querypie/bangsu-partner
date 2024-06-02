@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useRef } from 'react';
+import { ReactNode, useEffect } from 'react';
 import type { CSSProperties } from 'react';
 import { XLg } from 'react-bootstrap-icons';
 import clsx from 'clsx';
@@ -26,19 +26,17 @@ export default function Drawer({
   onClose = () => {},
   size = 300,
   direction = 'right',
-  lockBackgroundScroll = false,
+  lockBackgroundScroll = true,
   overlayClassName,
   className,
 }: DrawerProps) {
-  const bodyRef = useRef<HTMLBodyElement | null>(null);
-
   useEffect(() => {
     const updatePageScroll = () => {
-      bodyRef.current = window.document.querySelector('body');
-      if (bodyRef.current && lockBackgroundScroll) {
-        bodyRef.current.style.overflow = open ? 'hidden' : '';
+      if (lockBackgroundScroll) {
+        document.body.style.overflow = open ? 'hidden' : '';
       }
     };
+
     updatePageScroll();
   }, [open]);
 
