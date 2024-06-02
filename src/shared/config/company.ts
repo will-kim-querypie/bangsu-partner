@@ -8,3 +8,4 @@ export const ADDRESS = '서울특별시 강남구 헌릉로571길 34-8';
 export const ADDRESS_COORDINATE = Object.freeze({ latitude: 37.46845, longitude: 127.10098 });
 export const KAKAOTALK_OPEN_CHAT_LINK = 'https://open.kakao.com/o/sSYP0ptg';
 export const NAVER_FORM_LINK = 'https://naver.me/G1sfB4Gx';
+export const DEPLOYMENT_URL = 'https://bangsu-partner.com';
