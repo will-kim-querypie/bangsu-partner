@@ -29,8 +29,8 @@ export default function CheckPage() {
               <a key={title} {...anchorProps}>
                 <div className={styles.cardLinkInner}>
                   {icon}
-                  {title}
-                  <Typography type="caption1" className={styles.cardLinkSubText}>
+                  <Typography type="body3">{title}</Typography>
+                  <Typography type="detail1" className={styles.cardLinkSubText}>
                     # {description}
                   </Typography>
                 </div>
