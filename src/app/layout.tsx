@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   applicationName: COMPANY_NAME,
   generator: 'Next.js',
   openGraph: {
-    images: [{ url: '/logo.png' }],
+    images: [{ url: '/home-bg.jpg' }],
   },
 };
 export const viewport: Viewport = {
