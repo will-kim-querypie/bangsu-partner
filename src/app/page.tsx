@@ -41,7 +41,11 @@ export default function HomePage() {
       <div className="width-limit">
         <div className={styles.previewCards}>
           {posts.map(({ flagship, newestPost }) => (
-            <Link key={`preview-${flagship}`} href={`/construction-result/${flagship}`} className={styles.previewCard}>
+            <Link
+              key={`preview-${flagship}`}
+              href={`/construction-flagship/${flagship}`}
+              className={styles.previewCard}
+            >
               <div
                 role="presentation"
                 className={styles.previewCardImage}
