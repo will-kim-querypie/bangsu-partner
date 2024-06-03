@@ -56,7 +56,7 @@ export default function HomePage() {
                 <Typography type="caption2" className={styles.previewCardSubTitle}>
                   장마 및 태풍에도 안심하세요!
                   <br />
-                  하자보증 최대5년! 전문건설면허업
+                  하자보증 최대5년!
                 </Typography>
                 <Typography type="caption3" className={styles.previewCardViewMore}>
                   <span>view more</span>
