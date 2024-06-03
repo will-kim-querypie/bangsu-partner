@@ -73,7 +73,7 @@
   grid-template-rows: repeat(auto-fit, minmax(var(--preview-card-height), 1fr));
   grid-auto-rows: var(--preview-card-height);
   grid-auto-flow: row dense;
-  column-gap: 1em;
+  gap: 0.5em 1em;
   padding: var(--preview-cards-padding-y) 0;
 }
 
@@ -97,7 +97,7 @@
 .previewCardContent {
   width: 90%;
   position: absolute;
-  bottom: 40px;
+  bottom: 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,7 +106,7 @@
   box-shadow: var(--card-box-shadow);
   border-radius: var(--border-radius);
   text-align: center;
-  padding: 1.5em 1em;
+  padding: 1em;
   transition: bottom var(--hover-transition-duration), background var(--hover-transition-duration),
     color var(--hover-transition-duration);
 }
