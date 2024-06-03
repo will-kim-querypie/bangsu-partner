@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'react-bootstrap-icons';
 import clsx from 'clsx';
 import { getNewestPostList } from '@/shared/api/posts/controller';
-import { COMPANY_NAME } from '@/shared/config/company';
+import { COMPANY_NAME, PHONE } from '@/shared/config/company';
 import { FLAGSHIP_LABEL_DICT } from '@/shared/config/flagship';
 import { AutoTypo } from '@/shared/ui/auto-typo';
 import { Typography } from '@/shared/ui/typography';
@@ -30,6 +30,11 @@ export default function HomePage() {
             <br />
             {COMPANY_NAME}의 프리미엄 서비스로 고객님들의 공간을 안전하고 쾌적하게 만들어 드리겠습니다.
           </Typography>
+          <a href={`tel:${PHONE.replace(/-/g, '')}`}>
+            <Typography type="title1" className={styles.heroPhoneNumber}>
+              견적문의 <span>{PHONE}</span>
+            </Typography>
+          </a>
         </div>
       </div>
 

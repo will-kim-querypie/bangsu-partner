@@ -56,12 +56,19 @@
 }
 
 .heroSubTitle {
-  margin-top: 1.6em;
+  margin-top: 28px;
   color: var(--tertiary-color);
 }
-
 .heroDescription {
   margin-top: 10px;
+}
+.heroPhoneNumber {
+  margin-top: 20px;
+  color: var(--tertiary-color);
+}
+.heroPhoneNumber > span:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 /**
