@@ -4,6 +4,22 @@
   border-bottom: 1px solid var(--border-color);
 }
 
+.textTitle {
+  display: block;
+}
+.buttonTitle {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .textTitle {
+    display: none;
+  }
+  .buttonTitle {
+    display: flex;
+  }
+}
+
 .images {
   display: flex;
   flex-wrap: wrap;
@@ -14,4 +30,10 @@
   position: relative;
   width: calc(var(--app-max-width) * 0.4);
   max-width: 100%;
+}
+
+.floatRight {
+  width: max-content;
+  margin-left: auto;
+  padding: 20px 0;
 }
