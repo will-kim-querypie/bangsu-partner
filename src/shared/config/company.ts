@@ -1,9 +1,8 @@
-export const CEO = '김상남';
-export const COMPANY_NAME = '방수파트너';
+export const CEO = '김성빈';
+export const COMPANY_NAME = '(주)진성에코';
 export const PHONE = '010-2772-1833';
-export const EMAIL = 'ellcoell2021@naver.com';
-export const BUSINESS_NUMBER = '753-81-01927'; // 사업자번호
-export const MAIL_ORDER_SALES_APRROVAL_NUMBER = '2023-서울강남-02240'; // 통신판매신고번호
+export const EMAIL = 'jseco2020@naver.com';
+export const BUSINESS_NUMBER = '825-86-03040'; // 사업자번호
 export const ADDRESS = '서울특별시 강남구 헌릉로571길 34-8';
 export const ADDRESS_COORDINATE = Object.freeze({ latitude: 37.46845, longitude: 127.10098 });
 export const KAKAOTALK_OPEN_CHAT_LINK = 'https://open.kakao.com/o/sSYP0ptg';

@@ -1,13 +1,5 @@
 import clsx from 'clsx';
-import {
-  ADDRESS,
-  BUSINESS_NUMBER,
-  CEO,
-  COMPANY_NAME,
-  EMAIL,
-  MAIL_ORDER_SALES_APRROVAL_NUMBER,
-  PHONE,
-} from '@/shared/config/company';
+import { ADDRESS, BUSINESS_NUMBER, CEO, COMPANY_NAME, EMAIL, PHONE } from '@/shared/config/company';
 import { Logo } from '@/shared/ui/logo';
 import { Typography } from '@/shared/ui/typography';
 import styles from './fnb.module.css';
@@ -32,7 +24,6 @@ export default function FNB() {
               <Typography type="caption2">H.P: {PHONE}</Typography>
             </a>
             <Typography type="caption2">사업자등록번호: {BUSINESS_NUMBER}</Typography>
-            <Typography type="caption2">통신판매신고번호: {MAIL_ORDER_SALES_APRROVAL_NUMBER}</Typography>
           </address>
 
           <Typography type="caption2">@Copyright {COMPANY_NAME}. All rights reserved.</Typography>
