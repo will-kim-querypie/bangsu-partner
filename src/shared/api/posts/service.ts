@@ -92,7 +92,7 @@ function validateImageExtension(filename: string): boolean {
 
 function imageFactory(fullPath: string, postTitle: string, imageName: string): Image {
   return {
-    src: fullPath.split('/public').pop()?.replace(/ /g, '%20') as string, // NOTE: 공백이 포함된 문자는 url에 사용할 수 없음
+    src: fullPath.split('/public').pop() as string, // Next.js의 Image가 자동으로 URL 인코딩을 처리합니다
     alt: `${postTitle}-${imageName}`,
   };
 }

@@ -31,6 +31,7 @@ export default function ConstructionResultCards({ cards }: { cards: Card[] }) {
                 loading="lazy"
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
                 className={styles.image}
+                unoptimized
               />
               <div className={styles.imageOverWrap}>
                 <Typography type="detail1">{card.title}</Typography>
