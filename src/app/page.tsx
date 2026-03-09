@@ -50,7 +50,9 @@ export default function HomePage() {
                 role="presentation"
                 className={styles.previewCardImage}
                 style={{
-                  backgroundImage: `url(${encodeURI(newestPost ? newestPost.firstImage.src : '/flagship-default.jpeg')})`,
+                  backgroundImage: `url(${encodeURI(
+                    newestPost ? newestPost.firstImage.src : '/flagship-default.jpeg',
+                  )})`,
                 }}
               />
               <div className={styles.previewCardContent}>
