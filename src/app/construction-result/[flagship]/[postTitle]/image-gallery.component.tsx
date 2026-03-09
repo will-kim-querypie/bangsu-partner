@@ -8,8 +8,8 @@ import 'react-image-gallery/styles/css/image-gallery.css';
 export default function ImageGallery({ images }: { images: PostDetailDto['images'] }) {
   const galleryImages = useMemo<ReactImageGalleryItem[]>(() => {
     return images.map(image => ({
-      original: image.src,
-      thumbnail: image.src,
+      original: encodeURI(image.src),
+      thumbnail: encodeURI(image.src),
       originalAlt: image.alt,
       thumbnailAlt: image.alt,
     }));
